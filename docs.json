@@ -1,85 +1,95 @@
 {
-  "$schema": "https://mintlify.com/docs/docs.json",
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
   "name": "Supermission",
   "colors": {
     "primary": "#1a1a1a",
     "light": "#f1f3f4",
     "dark": "#1a1a1a"
   },
-  "topbarCtaButton": {
-    "name": "Launch Terminal",
-    "url": "https://supermission.fun/markets"
-  },
-  "tabs": [
-    {
-      "name": "Trading",
-      "url": "trading"
-    },
-    {
-      "name": "AI Features",
-      "url": "ai"
-    }
-  ],
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Getting Started",
-        "pages": [
-          "introduction",
-          "getting-started/what-is-supermission",
-          "getting-started/create-account",
-          "getting-started/fund-wallet",
-          "getting-started/first-trade"
+        "tab": "Getting Started",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "getting-started/what-is-supermission",
+              "getting-started/create-account",
+              "getting-started/fund-wallet",
+              "getting-started/first-trade"
+            ]
+          },
+          {
+            "group": "Prediction Markets 101",
+            "pages": [
+              "getting-started/how-markets-work",
+              "getting-started/reading-prices",
+              "getting-started/risk-management"
+            ]
+          }
         ]
       },
       {
-        "group": "Prediction Markets 101",
-        "pages": [
-          "getting-started/how-markets-work",
-          "getting-started/reading-prices",
-          "getting-started/risk-management"
+        "tab": "Trading",
+        "groups": [
+          {
+            "group": "Trading",
+            "pages": [
+              "trading/market-orders",
+              "trading/limit-orders",
+              "trading/selling-positions",
+              "trading/redeeming-wins",
+              "trading/portfolio",
+              "trading/watchlist"
+            ]
+          }
         ]
       },
       {
-        "group": "Trading",
-        "pages": [
-          "trading/market-orders",
-          "trading/limit-orders",
-          "trading/selling-positions",
-          "trading/redeeming-wins",
-          "trading/portfolio",
-          "trading/watchlist"
+        "tab": "AI Features",
+        "groups": [
+          {
+            "group": "AI Intelligence",
+            "pages": [
+              "ai/signals",
+              "ai/war-room",
+              "ai/oracle-agent",
+              "ai/delphi-agent",
+              "ai/whale-intelligence"
+            ]
+          }
         ]
       },
       {
-        "group": "AI Intelligence",
-        "pages": [
-          "ai/signals",
-          "ai/war-room",
-          "ai/oracle-agent",
-          "ai/delphi-agent",
-          "ai/whale-intelligence"
-        ]
-      },
-      {
-        "group": "Platform",
-        "pages": [
-          "platform/stacked-view",
-          "platform/alerts",
-          "platform/mobile",
-          "platform/security"
+        "tab": "Platform",
+        "groups": [
+          {
+            "group": "Platform",
+            "pages": [
+              "platform/stacked-view",
+              "platform/alerts",
+              "platform/mobile",
+              "platform/security"
+            ]
+          }
         ]
       }
     ]
   },
-  "footerSocials": {
-    "x": "https://x.com/supaboramern",
-    "telegram": "https://t.me/supermission"
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Launch Terminal",
+      "href": "https://supermission.fun/markets"
+    }
   },
-  "feedback": {
-    "thumbsRating": true
-  },
-  "search": {
-    "prompt": "Search docs..."
+  "footer": {
+    "socials": {
+      "x": "https://x.com/supaboramern",
+      "github": "https://github.com/Supermission"
+    }
   }
 }

@@ -15,7 +15,7 @@
           {
             "group": "Getting Started",
             "pages": [
-              "introduction",
+              "index",
               "getting-started/what-is-supermission",
               "getting-started/create-account",
               "getting-started/fund-wallet",

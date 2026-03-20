@@ -1,7 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs/docs.json",
   "name": "Supermission",
-  "theme": "maple",
   "colors": {
     "primary": "#1a1a1a",
     "light": "#f1f3f4",

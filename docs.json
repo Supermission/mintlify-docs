@@ -1,122 +1,99 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "$schema": "https://mintlify.com/docs/docs.json",
+  "name": "Supermission",
+  "theme": "venus",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#1a1a1a",
+    "light": "#f1f3f4",
+    "dark": "#1a1a1a",
+    "background": {
+      "light": "#ffffff",
+      "dark": "#0a0a0a"
+    }
   },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
+  "favicon": "/favicon.png",
+  "logo": {
+    "light": "/logo-light.png",
+    "dark": "/logo-dark.png"
+  },
+  "topbarCtaButton": {
+    "name": "Launch Terminal",
+    "url": "https://supermission.fun/markets"
+  },
+  "tabs": [
+    {
+      "name": "Trading",
+      "url": "trading"
+    },
+    {
+      "name": "AI Features",
+      "url": "ai"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction",
+        "getting-started/what-is-supermission",
+        "getting-started/create-account",
+        "getting-started/fund-wallet",
+        "getting-started/first-trade"
+      ]
+    },
+    {
+      "group": "Prediction Markets 101",
+      "pages": [
+        "getting-started/how-markets-work",
+        "getting-started/reading-prices",
+        "getting-started/risk-management"
+      ]
+    },
+    {
+      "group": "Trading",
+      "pages": [
+        "trading/market-orders",
+        "trading/limit-orders",
+        "trading/selling-positions",
+        "trading/redeeming-wins",
+        "trading/portfolio",
+        "trading/watchlist"
+      ]
+    },
+    {
+      "group": "AI Intelligence",
+      "pages": [
+        "ai/signals",
+        "ai/war-room",
+        "ai/oracle-agent",
+        "ai/delphi-agent",
+        "ai/whale-intelligence"
+      ]
+    },
+    {
+      "group": "Platform",
+      "pages": [
+        "platform/stacked-view",
+        "platform/alerts",
+        "platform/mobile",
+        "platform/security"
       ]
     }
+  ],
+  "footerSocials": {
+    "x": "https://x.com/supaboramern",
+    "linkedin": "https://linkedin.com/company/supermission",
+    "telegram": "https://t.me/supermission"
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+  "analytics": {
+    "posthog": {
+      "apiKey": ""
     }
   },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+  "feedback": {
+    "thumbsRating": true
   },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+  "search": {
+    "prompt": "Search docs..."
   }
 }

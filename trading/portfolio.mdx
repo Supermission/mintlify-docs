@@ -1,71 +1,26 @@
 ---
-title: "Portfolio Dashboard"
-description: "Track every position, every trade, every dollar. Your complete trading overview."
+title: "Portfolio"
+description: "Your positions, P&L, and trade history in one place."
 ---
 
-# Your trading command center
+# Portfolio
 
-The Portfolio dashboard is where performance meets accountability. Every position, every P&L number, every trade — all in one view.
+The Portfolio tab shows everything about your trading account.
 
-## Dashboard stats
+## Top card
 
-The top section shows your aggregate numbers at a glance:
-
-<CardGroup cols={4}>
-  <Card title="Portfolio Value" icon="chart-line">
-    Total current value of all open positions plus available USDC balance.
-  </Card>
-  <Card title="P&L" icon="arrow-trend-up">
-    Profit and loss across all trades — realized and unrealized. Green is good.
-  </Card>
-  <Card title="Win Rate" icon="bullseye">
-    Percentage of resolved positions that ended profitable.
-  </Card>
-  <Card title="Volume" icon="chart-bar">
-    Total USDC traded across all buys and sells.
-  </Card>
-</CardGroup>
-
-The portfolio value card shows a gradient visualization — you can feel the momentum at a glance.
+Total portfolio value and P&L. Green gradient when you're up, red when you're down. Win rate, position count, total trades, and volume from your trade history.
 
 ## Position cards
 
-Each open position gets a card showing:
+Each open position gets a card. Shows the market question, your side (YES/NO), entry price, current price, P&L in dollars and percent, and time remaining.
 
-- **Market title** and your side (YES/NO)
-- **Shares held** and current market price
-- **P&L** for that position (unrealized)
-- **Time remaining** — countdown to resolution, or "Ended" for resolved markets
-- **Sell button** or **Redeem** button depending on status
-
-<Info>
-  Positions are sorted by **ending soonest** by default. The market about to resolve is always at the top — because that's the one that needs your attention.
-</Info>
-
-## Trade history
-
-Every trade you've ever made, in a clean table:
-
-- Date, market, side, price, shares, total cost
-- Filterable by date range
-- **CSV export** — download your full history for tax prep, analysis, or flexing your P&L on Twitter
+Sorted by ending soonest. Redeemable positions float to the top.
 
 ## Open orders
 
-Your active limit orders live here. Each entry shows the market, side, price, size, and a cancel button. If a limit order is stale or your thesis changed, kill it here.
+If you have limit orders waiting to fill, they show here with their status and fill percentage.
 
-<Tabs>
-  <Tab title="Active Positions">
-    Live positions that haven't resolved yet. These are your current bets on the future.
-  </Tab>
-  <Tab title="Resolved">
-    Completed positions — wins and losses. Each shows final outcome and your P&L. Learn from both.
-  </Tab>
-  <Tab title="Open Orders">
-    Limit orders sitting on the book waiting for fills. Monitor and manage from here.
-  </Tab>
-</Tabs>
+## Trade history
 
-<Tip>
-  Review your portfolio weekly. Not to stress about P&L, but to ask: "Would I enter this position today at this price?" If the answer is no, it's time to [sell](/trading/selling-positions).
-</Tip>
+Scrollable list of all your past trades at the bottom. BUY/SELL badge, market name, amount, and date. Export to CSV if you need it for records.

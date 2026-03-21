@@ -1,69 +1,28 @@
 ---
 title: "AI Signals"
-description: "Multi-agent predictions with sourced reasoning. Your alpha feed."
+description: "Where the AI disagrees with the market. Three types, ranked by edge."
 ---
 
-# When the AI disagrees with the market
+# AI Signals
 
-A signal fires when Supermission's AI system calculates a probability that meaningfully diverges from the current market price. That divergence is your potential edge.
+A signal fires when our AI thinks the market is wrong about something.
 
-Signals aren't tips. They're reasoned analyses with sources, confidence scores, and full transparency into how the AI reached its conclusion.
+We run analysis on every active market. When the AI's estimated probability diverges from the current market price, that gap becomes a signal. Bigger gap, stronger signal.
 
-## Three signal types
+## Three types
 
-<CardGroup cols={3}>
-  <Card title="Sentiment" icon="brain">
-    AI's independent probability estimate based on news, social data, and fundamentals. Fires when AI confidence diverges from market price.
-  </Card>
-  <Card title="Momentum" icon="arrow-trend-up">
-    Price action confirms what sentiment already predicted. The market is moving toward the AI's estimate. Trend-following signal.
-  </Card>
-  <Card title="Spot Price" icon="bitcoin">
-    Crypto-specific. Triggers when a token crosses a threshold relevant to a prediction market (e.g., BTC above $100k triggers related market signals).
-  </Card>
-</CardGroup>
+**Sentiment.** The core signal. Four agents analyze a market using news and social data, debate each other, and produce a probability. If it's meaningfully different from the market price, you see it here.
 
-## How signals are generated
+**Momentum.** Fires when the price is already moving in the direction the AI predicted. Confirmation that the market is catching up to what the AI saw earlier.
 
-This isn't a single model guessing. It's a 4-agent system:
+**Spot Price.** Crypto-specific. For markets like "Will Bitcoin be above $100K by Friday," this compares the current spot price to the market's threshold and gives you a proximity signal.
 
-<Steps>
-  <Step title="Independent analysis">
-    Four AI agents — Bull, Bear, Contrarian, and Quant — independently analyze the market. Each has different biases and data priorities. They don't see each other's work.
-  </Step>
-  <Step title="Evidence gathering">
-    Each agent pulls from news feeds, social sentiment, on-chain data, and historical patterns. Every claim is sourced.
-  </Step>
-  <Step title="Debate synthesis">
-    A judge agent reviews all four analyses, weighs the arguments, and produces a final probability estimate with confidence score.
-  </Step>
-  <Step title="Signal emission">
-    If the synthesized probability diverges meaningfully from market price, a signal fires with direction (YES/NO), confidence (0-100), and the full reasoning chain.
-  </Step>
-</Steps>
+## How they're made
 
-## Confidence scores
+Every 15 minutes, the system pulls news from 23 RSS feeds plus Reddit and Bluesky. It matches articles to markets using semantic similarity. Relevant matches go through the four-agent system (Bull, Bear, Contrarian, Quant), which produces a probability and reasoning.
 
-Every signal carries a confidence score from 0 to 100:
+Confidence scores are agreement-weighted. If all four agents agree, confidence is high. If they're split, it caps lower regardless of what any single agent says.
 
-| Range | Meaning |
-|-------|---------|
-| 80-100 | Strong conviction. Agents largely agree. Evidence is clear. |
-| 60-79 | Moderate conviction. Some disagreement between agents. |
-| 40-59 | Low conviction. Significant agent disagreement. Proceed with caution. |
+## Filtering
 
-## Filtering signals
-
-The signal feed can be filtered by:
-
-- **Category** — Politics, Crypto, Sports, Finance, etc.
-- **Confidence** — Minimum threshold slider
-- **Volume** — Filter out thin markets where execution is harder
-
-<Tip>
-  High confidence + high volume + large divergence from market price = the strongest setups. That's the trifecta. Most traders filter to 70+ confidence and sort by edge size.
-</Tip>
-
-<Warning>
-  Signals are analysis, not financial advice. The AI is good, but markets are adversarial. Always understand the reasoning before trading on a signal — that's why we show the full chain.
-</Warning>
+Filter by category (Crypto, Politics, Sports), signal type, minimum confidence, or minimum volume. Sort by confidence, edge size, or ending soonest.

@@ -1,62 +1,16 @@
 ---
 title: "Price Alerts"
-description: "Real-time notifications when your watched markets move."
+description: "Get notified when watchlisted markets move."
 ---
 
-# Never miss a move
+# Price Alerts
 
-Price alerts are tied to your [Watchlist](/trading/watchlist). When a market you're watching moves more than 5% in either direction, you get notified instantly. No polling dashboards. No refreshing tabs.
+Add a market to your watchlist. If it moves more than 5% from your baseline, you get a notification.
 
-## How alerts work
+The alert slides in from the top-right corner. Click it to jump straight to that market. Swipe right to dismiss. It auto-disappears after 5 seconds.
 
-<Steps>
-  <Step title="Watchlist a market">
-    Bookmark any market by clicking the bookmark icon on its card.
-  </Step>
-  <Step title="Wait for movement">
-    Supermission monitors prices on all your watchlisted markets in real-time.
-  </Step>
-  <Step title="5% threshold triggers">
-    When a watchlisted market's price moves more than 5% from your bookmark price (or the last alert), a notification fires.
-  </Step>
-  <Step title="Notification appears">
-    A notification card slides in from the top-right of the screen. It shows the market name, direction of movement, and the new price.
-  </Step>
-</Steps>
-
-## Alert sounds
-
-Different sounds for different directions — so you know what happened before you look:
-
-<CardGroup cols={2}>
-  <Card title="Price Up" icon="arrow-up">
-    Distinct ascending tone. The market moved in favor of YES holders.
-  </Card>
-  <Card title="Price Down" icon="arrow-down">
-    Different descending tone. The market moved in favor of NO holders.
-  </Card>
-</CardGroup>
-
-## Interacting with alerts
-
-- **Click** the notification to jump directly to the market's detail page
-- **Swipe** (or dismiss) to clear the notification
-- Alerts auto-dismiss after a few seconds if you don't interact
-
-<Info>
-  The 5% threshold is calculated from the price at the time you bookmarked the market, or from the price at the last alert — whichever is more recent. This prevents alert fatigue from markets that oscillate around the same level.
-</Info>
-
-## Why 5%?
-
-Small moves are noise. A market ticking from 52% to 53% isn't actionable. But a jump from 52% to 58%? Something happened. News broke. A whale entered. The consensus shifted.
-
-5% is the sweet spot between "I want to know" and "stop bothering me."
+Different sounds for different directions. Price goes up, one sound. Price goes down, another. You'll learn to tell them apart.
 
 <Warning>
-  Alerts require the Supermission tab to be open (or the PWA installed). We don't send push notifications to your phone's lock screen — yet.
+  Alerts only fire for watchlisted markets. If you want notifications on a market, bookmark it first.
 </Warning>
-
-<Tip>
-  Pair alerts with limit orders. Watchlist a market, wait for the alert that confirms your thesis, then execute. Reactive trading beats predictive trading most of the time.
-</Tip>

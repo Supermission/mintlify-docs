@@ -1,46 +1,34 @@
 ---
 title: "What is Supermission?"
-description: "A prediction market terminal with AI agents. Research, signals, and trade execution in one place — built on Polymarket's liquidity."
+description: "A trading terminal for prediction markets. AI does the research, you make the calls."
 ---
 
-# Bloomberg Terminal for prediction markets
+# What is Supermission?
 
-Polymarket has $44B+ in lifetime volume and 4,500+ active markets. It's the deepest prediction market liquidity on the planet. But trading it feels like using Bloomberg on a Nokia.
+Supermission is a trading terminal for prediction markets.
 
-Supermission fixes that. It's a terminal — not another market, not another exchange, not another dashboard. We sit on top of Polymarket and give you AI-powered tools to actually trade well.
+Polymarket has 4,500+ markets and $44B in volume. Great liquidity. But the interface gives you prices and leaves the rest to you. No research tools, no signals, no way to understand why a market is moving.
 
-## What it does
+We built what was missing. A terminal that sits on top of Polymarket and gives you tools to actually trade well.
 
-<CardGroup cols={2}>
-  <Card title="AI Research Agents" icon="brain">
-    4 independent AI agents analyze every market. They look at news, social sentiment, on-chain flows, and historical patterns. They disagree with each other. A judge synthesizes. You see the full reasoning.
-  </Card>
-  <Card title="Signal Generation" icon="signal">
-    When the AI's probability diverges from the market price — that's a signal. Ranked by edge size, conviction, and time-to-resolution. Your alpha feed.
-  </Card>
-  <Card title="One-Click Execution" icon="bolt">
-    Market orders, limit orders, or just tell the Oracle agent what you want in plain English. Trades hit Polymarket's CLOB directly.
-  </Card>
-  <Card title="Smart Wallet" icon="wallet">
-    Email login. No seed phrases. No gas fees. No bridging headaches. We handle the plumbing so you can focus on the trade.
-  </Card>
-</CardGroup>
+## What you can do
 
-## How it works, simply
+**Trade fast.** Market orders execute instantly. Limit orders let you set your price. Or just tell the Oracle agent what you want in plain English and it handles execution.
 
-You sign up with your email. A smart wallet gets created on Base. You deposit USDC. When you trade, we bridge to Polygon and execute on Polymarket's orderbook — all invisible to you.
+**See what the AI thinks.** Four agents independently analyze every market. They look at news, social sentiment, on-chain activity. They disagree with each other. You see the full debate, not just a number.
 
-The AI agents run 24/7 analyzing markets. When they spot an edge (their estimated probability vs. market price), it surfaces as a signal. You review the reasoning, decide if you agree, and execute — either by clicking or by chatting with Oracle.
+**Track everything.** Portfolio with live P&L. Watchlist with price alerts. Trade history with CSV export. Position cards sorted by what's ending soonest.
+
+**Know what whales are doing.** Every market shows who the biggest holders are, which side they're on, and how concentrated the positions are.
+
+## How it actually works
+
+You sign up with your email. We create a smart wallet for you on Base. You send USDC to it.
+
+When you trade, we bridge your USDC to Polygon and execute on Polymarket's orderbook. You don't see any of that. You just click and trade.
+
+The AI runs in the background, checking news feeds, Reddit, Bluesky, and market data every 15 minutes. When it finds something interesting, it shows up as a signal.
 
 <Tip>
-  Think of it this way: Polymarket is the exchange. Supermission is your trading desk.
+  Polymarket is the exchange. Supermission is the trading desk you put on top of it.
 </Tip>
-
-## What you get
-
-- **Market orders** — instant execution at current prices
-- **Limit orders** — set your price, wait for the market to come to you
-- **AI signals** — ranked opportunities with full reasoning chains
-- **Copy trading** — follow signal-matched trades from high-conviction setups
-- **Portfolio tracking** — P&L, position monitoring, resolution countdowns
-- **Whale intelligence** — see what the big wallets are doing

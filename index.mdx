@@ -1,48 +1,50 @@
 ---
 title: "Supermission"
-description: "AI agents that trade prediction markets. Research, signals, execution — all in one terminal."
+description: "Trade prediction markets with AI agents that do the research for you."
 ---
 
-# The prediction market terminal that trades for you
+# Supermission
 
-Supermission is what happens when you give AI agents access to 4,500+ prediction markets and tell them to find alpha.
+Trade prediction markets with agents that actually think.
 
-We built the terminal we wanted as traders: real-time AI signals, one-click execution, whale tracking, and agents that actually understand market dynamics — not just parrot prices back at you.
+We built the trading terminal we wished existed. You get AI that researches 4,500+ markets, finds where the crowd is wrong, and lets you trade in one click. Or one sentence.
 
 <CardGroup cols={3}>
-  <Card title="Start Trading" icon="rocket" href="/getting-started/create-account">
-    Account to first trade in under 2 minutes
+  <Card title="Start trading" icon="rocket" href="/getting-started/create-account">
+    Account to first trade in 2 minutes
   </Card>
-  <Card title="AI Signals" icon="brain" href="/ai/signals">
-    Multi-agent predictions with sourced reasoning
+  <Card title="See signals" icon="signal" href="/ai/signals">
+    Where our AI disagrees with the market
   </Card>
   <Card title="Talk to Oracle" icon="message-bot" href="/ai/oracle-agent">
-    Your AI trading assistant that actually executes
+    Chat-based trading. Just tell it what you want.
   </Card>
 </CardGroup>
 
-## What makes this different
+## How it works
 
-Most prediction market tools are dashboards. You stare at numbers, maybe get an alert, then manually click through 5 screens to place a trade.
+Most prediction market tools show you numbers and hope you figure it out.
 
-Supermission is a **terminal**. The AI does the research. You make the call. The agent executes.
+We run four independent AI agents on every market. They analyze news, sentiment, and data. They argue with each other. A judge picks the winner. You see all of it, not just a confidence score.
+
+When the AI thinks the market is wrong, that shows up as a signal. You review the reasoning. If you agree, you trade. If you don't, you move on.
 
 <Steps>
-  <Step title="AI researches markets 24/7">
-    4 AI agents independently analyze every market using news, social sentiment, and on-chain data. They debate. A judge synthesizes. You see the reasoning, not just a number.
+  <Step title="Agents analyze">
+    Four agents look at every market from different angles. Bull, Bear, Contrarian, Quant. They disagree on purpose.
   </Step>
-  <Step title="Signals surface the alpha">
-    When the AI disagrees with the market — that's your edge. We show you exactly where our confidence diverges from the crowd, ranked by opportunity size.
+  <Step title="Signals surface">
+    When the AI's probability is different from the market price, that's your edge. We rank these by size.
   </Step>
-  <Step title="One conversation to trade">
-    Tell Oracle "buy $50 on YES for the Fed market" and it's done. No clicking through menus. No switching chains. No managing gas.
+  <Step title="You trade">
+    Click a button or tell Oracle "buy $50 on YES." It handles the rest. No chain switching, no gas.
   </Step>
 </Steps>
 
-## The stack
+## The basics
 
-Built on Base + Polygon. Trades execute on Polymarket's orderbook (deepest liquidity in prediction markets). Your wallet is a Privy-managed smart account — no seed phrases, no gas management, email login.
+Built on Polymarket (deepest prediction market liquidity, $44B+ volume). Your wallet is created automatically when you sign up. Email login, no seed phrases, gas fees covered.
 
-<Info>
-  Supermission is in beta. You're early. Things move fast. If something breaks, the Oracle agent probably knows about it before we do.
-</Info>
+<Tip>
+  New here? Start with [What is Supermission](/getting-started/what-is-supermission) for the full picture.
+</Tip>

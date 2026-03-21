@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "quill",
+  "theme": "maple",
   "name": "Supermission",
   "favicon": "/favicon.png",
   "logo": {
@@ -13,25 +13,24 @@
     "light": "#3B82F6",
     "dark": "#1D4ED8"
   },
-  "rounded": "default",
-  "anchors": [
-    {
-      "anchor": "Launch Terminal",
-      "href": "https://supermission.fun/markets",
-      "icon": "arrow-up-right-from-square"
-    },
-    {
-      "anchor": "Discord",
-      "href": "https://discord.gg/6bwN64PW5f",
-      "icon": "discord"
-    },
-    {
-      "anchor": "GitHub",
-      "href": "https://github.com/Supermission",
-      "icon": "github"
-    }
-  ],
   "navigation": {
+    "anchors": [
+      {
+        "anchor": "Launch Terminal",
+        "href": "https://supermission.fun/markets",
+        "icon": "arrow-up-right-from-square"
+      },
+      {
+        "anchor": "Discord",
+        "href": "https://discord.gg/6bwN64PW5f",
+        "icon": "discord"
+      },
+      {
+        "anchor": "GitHub",
+        "href": "https://github.com/Supermission",
+        "icon": "github"
+      }
+    ],
     "tabs": [
       {
         "tab": "Getting Started",

@@ -1,17 +1,36 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "quill",
   "name": "Supermission",
   "favicon": "/favicon.png",
   "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://supermission.fun"
   },
   "colors": {
-    "primary": "#1a1a1a",
-    "light": "#f1f3f4",
-    "dark": "#1a1a1a"
+    "primary": "#2563EB",
+    "light": "#3B82F6",
+    "dark": "#1D4ED8"
   },
+  "rounded": "default",
+  "anchors": [
+    {
+      "anchor": "Launch Terminal",
+      "href": "https://supermission.fun/markets",
+      "icon": "arrow-up-right-from-square"
+    },
+    {
+      "anchor": "Discord",
+      "href": "https://discord.gg/6bwN64PW5f",
+      "icon": "discord"
+    },
+    {
+      "anchor": "GitHub",
+      "href": "https://github.com/Supermission",
+      "icon": "github"
+    }
+  ],
   "navigation": {
     "tabs": [
       {
@@ -41,12 +60,17 @@
         "tab": "Trading",
         "groups": [
           {
-            "group": "Trading",
+            "group": "Executing Trades",
             "pages": [
               "trading/market-orders",
               "trading/limit-orders",
               "trading/selling-positions",
-              "trading/redeeming-wins",
+              "trading/redeeming-wins"
+            ]
+          },
+          {
+            "group": "Managing Positions",
+            "pages": [
               "trading/portfolio",
               "trading/watchlist"
             ]
@@ -54,16 +78,21 @@
         ]
       },
       {
-        "tab": "AI Features",
+        "tab": "AI Tools",
         "groups": [
           {
-            "group": "AI Intelligence",
+            "group": "Analysis",
             "pages": [
               "ai/signals",
               "ai/war-room",
-              "ai/oracle-agent",
-              "ai/delphi-agent",
               "ai/whale-intelligence"
+            ]
+          },
+          {
+            "group": "Agents",
+            "pages": [
+              "ai/oracle-agent",
+              "ai/delphi-agent"
             ]
           }
         ]
@@ -72,11 +101,16 @@
         "tab": "Platform",
         "groups": [
           {
-            "group": "Platform",
+            "group": "Features",
             "pages": [
               "platform/stacked-view",
               "platform/alerts",
-              "platform/mobile",
+              "platform/mobile"
+            ]
+          },
+          {
+            "group": "Trust & Safety",
+            "pages": [
               "platform/security"
             ]
           }
@@ -98,9 +132,15 @@
     ]
   },
   "navbar": {
+    "links": [
+      {
+        "label": "Blog",
+        "href": "https://supermission.fun/blog"
+      }
+    ],
     "primary": {
       "type": "button",
-      "label": "Launch Terminal",
+      "label": "Open App",
       "href": "https://supermission.fun/markets"
     }
   },

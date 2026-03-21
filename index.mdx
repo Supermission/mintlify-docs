@@ -1,50 +1,89 @@
 ---
-title: "Supermission"
+title: "Supermission Docs"
+sidebarTitle: "Welcome"
 description: "Trade prediction markets with AI agents that do the research for you."
 ---
 
-# Supermission
-
 Trade prediction markets with agents that actually think.
 
-We built the trading terminal we wished existed. You get AI that researches 4,500+ markets, finds where the crowd is wrong, and lets you trade in one click. Or one sentence.
+We built the trading terminal we wished existed. AI researches 4,500+ markets, finds where the crowd is wrong, and lets you trade in one click or one sentence.
 
-<CardGroup cols={3}>
-  <Card title="Start trading" icon="rocket" href="/getting-started/create-account">
-    Account to first trade in 2 minutes
+## Quick start
+
+<CardGroup cols={2}>
+  <Card title="Create your account" icon="user-plus" href="/getting-started/create-account">
+    Email login, embedded wallet, no seed phrases. Two minutes to your first trade.
   </Card>
-  <Card title="See signals" icon="signal" href="/ai/signals">
-    Where our AI disagrees with the market
+  <Card title="Fund your wallet" icon="wallet" href="/getting-started/fund-wallet">
+    Bridge USDC from any chain or buy directly with a card.
   </Card>
-  <Card title="Talk to Oracle" icon="message-bot" href="/ai/oracle-agent">
-    Chat-based trading. Just tell it what you want.
+  <Card title="Place your first trade" icon="arrow-trend-up" href="/getting-started/first-trade">
+    Pick a market, set your size, and trade. We handle gas and chain routing.
+  </Card>
+  <Card title="What is Supermission?" icon="circle-info" href="/getting-started/what-is-supermission">
+    The full picture: what it does, who it's for, and how it works.
   </Card>
 </CardGroup>
 
-## How it works
+## Learn to trade
 
-Most prediction market tools show you numbers and hope you figure it out.
+<CardGroup cols={3}>
+  <Card title="Market orders" icon="bolt" href="/trading/market-orders">
+    Instant execution at best available price
+  </Card>
+  <Card title="Limit orders" icon="clipboard-list" href="/trading/limit-orders">
+    Set your price and wait for a fill
+  </Card>
+  <Card title="Selling positions" icon="arrow-right-from-bracket" href="/trading/selling-positions">
+    Exit before resolution
+  </Card>
+  <Card title="Redeeming wins" icon="trophy" href="/trading/redeeming-wins">
+    Collect your payout after a market resolves
+  </Card>
+  <Card title="Portfolio" icon="chart-pie" href="/trading/portfolio">
+    Track your open positions, P&L, and history
+  </Card>
+  <Card title="Watchlist" icon="eye" href="/trading/watchlist">
+    Monitor markets and get price alerts
+  </Card>
+</CardGroup>
 
-We run four independent AI agents on every market. They analyze news, sentiment, and data. They argue with each other. A judge picks the winner. You see all of it, not just a confidence score.
+## AI tools
 
-When the AI thinks the market is wrong, that shows up as a signal. You review the reasoning. If you agree, you trade. If you don't, you move on.
+Four independent agents analyze every market. They disagree on purpose. You see the reasoning and decide.
 
-<Steps>
-  <Step title="Agents analyze">
-    Four agents look at every market from different angles. Bull, Bear, Contrarian, Quant. They disagree on purpose.
-  </Step>
-  <Step title="Signals surface">
-    When the AI's probability is different from the market price, that's your edge. We rank these by size.
-  </Step>
-  <Step title="You trade">
-    Click a button or tell Oracle "buy $50 on YES." It handles the rest. No chain switching, no gas.
-  </Step>
-</Steps>
+<CardGroup cols={2}>
+  <Card title="Signals" icon="signal" href="/ai/signals">
+    Where our AI disagrees with the market price. Ranked by edge size.
+  </Card>
+  <Card title="War Room" icon="people-group" href="/ai/war-room">
+    Four agents argue about a market. Bull, Bear, Contrarian, Quant. A judge picks the winner.
+  </Card>
+  <Card title="Oracle Agent" icon="message-bot" href="/ai/oracle-agent">
+    Chat-based trading. Tell it what you want in plain English.
+  </Card>
+  <Card title="Delphi Agent" icon="brain" href="/ai/delphi-agent">
+    Deep research mode. Pulls news, data, and on-chain activity for any market.
+  </Card>
+</CardGroup>
 
-## The basics
+## Platform
 
-Built on Polymarket (deepest prediction market liquidity, $44B+ volume). Your wallet is created automatically when you sign up. Email login, no seed phrases, gas fees covered.
+<CardGroup cols={2}>
+  <Card title="Stacked view" icon="layer-group" href="/platform/stacked-view">
+    Group related markets by event for faster scanning.
+  </Card>
+  <Card title="Price alerts" icon="bell" href="/platform/alerts">
+    Get notified when a market hits your target price.
+  </Card>
+  <Card title="Mobile" icon="mobile" href="/platform/mobile">
+    Full trading from your phone. Same features, optimized layout.
+  </Card>
+  <Card title="Security" icon="shield-halved" href="/platform/security">
+    How we handle your keys, data, and funds.
+  </Card>
+</CardGroup>
 
 <Tip>
-  New here? Start with [What is Supermission](/getting-started/what-is-supermission) for the full picture.
+  New to prediction markets? Start with [How markets work](/getting-started/how-markets-work) before placing your first trade.
 </Tip>

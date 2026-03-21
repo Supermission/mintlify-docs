@@ -79,6 +79,19 @@
       }
     ]
   },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "cursor",
+      "vscode",
+      "mcp",
+      "add-mcp"
+    ]
+  },
   "navbar": {
     "primary": {
       "type": "button",
@@ -89,7 +102,8 @@
   "footer": {
     "socials": {
       "x": "https://x.com/supaboramern",
-      "github": "https://github.com/Supermission"
+      "github": "https://github.com/Supermission",
+      "discord": "https://discord.gg/6bwN64PW5f"
     }
   }
 }

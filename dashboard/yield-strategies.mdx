@@ -9,7 +9,7 @@ The Dashboard's yield section helps you find and execute yield opportunities acr
 
 ## Yield opportunities
 
-The **YieldOpportunities** component displays available lending and liquidity pools:
+Available lending and liquidity pools are displayed with:
 
 | Element | Description |
 |---------|-------------|
@@ -41,11 +41,11 @@ The AI analyzes your current portfolio composition and available yield opportuni
 | **Expected APY** | Projected annual return |
 | **Risk level** | Conservative / Moderate / Aggressive tag |
 | **Estimated return** | 30-day projected return in USD |
-| **Recommendations** | Up to 2 specific actions shown (e.g., "Supply 500 USDC to Morpho Vault") |
+| **Recommendations** | Up to 2 specific actions (e.g., "Supply 500 USDC to Morpho Vault") |
 
-Each recommendation links to the **InvestModal** for one-click execution.
+Each recommendation links to a one-click deposit flow.
 
-## Deposit flow (InvestModal)
+## Deposit flow
 
 <Steps>
   <Step title="Input">
@@ -58,23 +58,23 @@ Each recommendation links to the **InvestModal** for one-click execution.
     3. Approving USDC (if needed)
     4. Depositing into protocol
 
-    Transaction hash appears with explorer link.
+    Transaction link appears during processing.
   </Step>
   <Step title="Success">
-    Checkmark icon, success message, transaction hash link, close button. DeFi positions refresh automatically.
+    Confirmation with transaction link. DeFi positions refresh automatically.
   </Step>
   <Step title="Error (if applicable)">
-    Error icon, specific error message, retry button.
+    Error message with retry button.
   </Step>
 </Steps>
 
 ## Supported protocols
 
-| Protocol | Type | Chains | Deposit method |
-|----------|------|--------|---------------|
-| **Morpho** | Curated lending vaults | Base | `useMorphoDeposit()` |
-| **Aave V3** | Open lending pools | Base, Ethereum, Polygon | `useDefiInvest()` |
-| **Compound III** | USDC lending market | Base, Ethereum | `useDefiInvest()` |
+| Protocol | Type | Chains |
+|----------|------|--------|
+| **Morpho** | Curated lending vaults | Base |
+| **Aave V3** | Open lending pools | Base, Ethereum, Polygon |
+| **Compound III** | USDC lending market | Base, Ethereum |
 
 <Tip>
   Use the AI strategy feature to get a starting point, then adjust based on your own risk assessment. The AI considers your current portfolio composition, available APYs, and protocol risk when generating recommendations.

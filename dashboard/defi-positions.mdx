@@ -9,28 +9,28 @@ The Dashboard shows your active DeFi positions across lending protocols and Unis
 
 ## Lending positions
 
-The **DeFiPositions** component shows your active lending positions (only renders if you have positions — returns null otherwise):
+Your active lending positions show (only appears if you have positions):
 
 | Element | Description |
 |---------|-------------|
 | **Protocol name** | Aave V3, Compound III, Morpho, etc. |
 | **Chain** | Which chain the position is on |
 | **Balance** | Formatted with asset symbol (e.g., "$1,234.56 USDC") |
-| **Withdraw button** | Orange-colored button to initiate withdrawal |
+| **Withdraw button** | Initiate withdrawal |
 
 ### Withdraw flow
 
-Clicking **Withdraw** opens the **WithdrawModal**:
+Clicking **Withdraw** opens a confirmation modal:
 
 <Steps>
   <Step title="Confirmation">
-    Shows protocol name with icon, position balance to withdraw. Click **Withdraw** to proceed.
+    Shows protocol name with icon and position balance to withdraw. Click **Withdraw** to proceed.
   </Step>
   <Step title="Processing">
-    Multi-step execution with progress indicators. Transaction link appears when submitted. Uses `useDefiWithdraw()` hook.
+    Multi-step execution with progress indicators. Transaction link appears when submitted.
   </Step>
   <Step title="Success">
-    Checkmark icon, confirmation message, completed transaction link. Positions refetch automatically after successful withdrawal.
+    Confirmation message with completed transaction link. Positions refresh automatically.
   </Step>
   <Step title="Error (if applicable)">
     Error details displayed with a **Retry** button.
@@ -39,30 +39,27 @@ Clicking **Withdraw** opens the **WithdrawModal**:
 
 ## Uniswap V3 LP positions
 
-The **PositionsPanel** shows your Uniswap V3 liquidity positions:
-
-Each **PositionCard** displays:
+Your Uniswap V3 liquidity positions show:
 
 | Element | Description |
 |---------|-------------|
 | **Token pair** | e.g., USDC/ETH |
 | **Fee tier** | 0.05%, 0.3%, 1% |
 | **Current value** | USD value of the position |
-| **Uncollected fees** | Accumulated trading fees (token0 + token1 amounts) |
+| **Uncollected fees** | Accumulated trading fees |
 | **Price range** | Lower and upper bound of your LP range |
-| **Remove button** | Opens RemoveLiquidityModal |
+| **Remove button** | Opens removal flow |
 
 ### Remove liquidity flow
 
-The **RemoveLiquidityModal** supports two modes:
+Two modes available:
 
 <Tabs>
   <Tab title="Remove Liquidity">
     Withdraws your liquidity from the pool:
     - Shows estimated token amounts you'll receive
     - **Collect fees** checkbox — optionally collect accumulated fees during removal
-    - Multi-step execution: approval → remove → (collect fees if checked)
-    - Transaction hash links to block explorer
+    - Multi-step execution with transaction links
   </Tab>
   <Tab title="Collect Fees">
     Just collects accumulated fees without removing liquidity:
@@ -74,26 +71,23 @@ The **RemoveLiquidityModal** supports two modes:
 
 ## Add liquidity
 
-New LP positions are created through the Dashboard's DeFi swap/pools interface:
+New LP positions are created through the Dashboard's pools interface:
 
-### PoolsPanel
-
-Browse and add liquidity to Uniswap V3 pools:
 - **Chain tabs**: Base, Ethereum, Polygon
-- **Search input**: Filter pools by token symbol
+- **Search**: Filter pools by token symbol
 - **Pool cards**: Token pair, fee tier, TVL, estimated APR, volume, liquidity distribution
-- Click a pool to open the **AddLiquidityModal**
+- Click a pool to open the add liquidity flow
 
-### AddLiquidityModal
+### Add liquidity flow
 
 | Section | Description |
 |---------|-------------|
 | **Pool info** | Fee tier, TVL, estimated APR |
-| **AI-Suggested Range** | Risk level selector: Conservative / Moderate / Aggressive. Range loads async with rationale explanation. |
+| **AI-Suggested Range** | Risk level selector: Conservative / Moderate / Aggressive. AI suggests an optimal price range with rationale. |
 | **IL Risk indicator** | Impermanent Loss risk: Low (green) / Medium (amber) / High (red) |
-| **Token amounts** | Side-by-side inputs for token0 and token1 |
+| **Token amounts** | Side-by-side inputs for both tokens |
 | **Submit** | Executes the add liquidity transaction |
 
 <Info>
-  LP positions require the wallet to be connected. The panel shows a wallet connection prompt if not authenticated. Position data comes from on-chain Uniswap V3 contracts via the `useUniswapPositions()` hook.
+  LP positions require your wallet to be connected. Position data comes directly from on-chain Uniswap V3 contracts.
 </Info>

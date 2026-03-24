@@ -3,9 +3,11 @@ title: "Token Analysis"
 description: "Comprehensive token due diligence with risk scoring, market data, security analysis, and AI-generated investment verdicts."
 ---
 
-# Token due diligence
+# Token due diligence in seconds
 
-The **Token Analysis** agent (ID: `token-due-diligence`) performs comprehensive token research. Give it any token symbol or address and it returns a full due diligence report with risk scoring, market data, security analysis, and an AI-generated investment verdict.
+The **Token Analysis** agent performs comprehensive research on any token. Give it a symbol or contract address and it returns a full due diligence report — risk scoring, market data, security analysis, and an AI-generated investment verdict.
+
+No more jumping between five tabs to research a token. Everything is in one place.
 
 ## How to use
 
@@ -16,16 +18,9 @@ Select the Token Analysis agent, then ask:
 - `"Compare $ARB vs $OP: which L2 token is stronger?"`
 - Or paste any token contract address with a chain selection
 
-### Parameter request
+If the agent needs more information (e.g., which chain for a contract address), it will ask you to select from a dropdown of popular chains (Base, Ethereum, Polygon, Arbitrum, Optimism, etc.).
 
-If the agent needs more information (e.g., which chain for a contract address), a **ParamRequestPanel** appears with:
-- **Chain selector** — dropdown of popular chains (Base, Ethereum, Polygon, Arbitrum, Optimism, etc.)
-- **Analysis type selector** — specific to Token DD
-- Submit button with validation
-
-## Result panel: TokenDDResultPanel
-
-The result renders as a rich interactive panel inside the chat bubble (max-width: 24rem):
+## What you get
 
 ### Header
 
@@ -35,7 +30,7 @@ The result renders as a rich interactive panel inside the chat bubble (max-width
 | **Token name + symbol** | With verified badge if applicable |
 | **Current price** | USD price with 24h change (green/red) |
 | **Social links** | Website and Twitter links (if available) |
-| **Address** | Click to copy, Alt+click to open block explorer |
+| **Address** | Click to copy, or open in block explorer |
 
 ### Risk gauge
 
@@ -69,17 +64,16 @@ Five tabs of detailed analysis:
     Token metadata: contract address, chain, decimals, total supply, holder count. On-chain metrics: transfer volume, unique holders, concentration risk.
   </Tab>
   <Tab title="Chart">
-    Embedded DexScreener chart for the token — full interactive candlestick chart with volume overlay, timeframe selection, and technical indicators.
+    Full interactive candlestick chart with volume overlay, timeframe selection, and technical indicators.
   </Tab>
 </Tabs>
 
-## Data sources
+## When to use Token Analysis
 
-The agent aggregates data from:
-- **GoPlus Security** — smart contract vulnerability scanning, holder concentration analysis
-- **On-chain data** — Alchemy/Blockdaemon for balances, transfers, holder metrics
-- **Price feeds** — CoinGecko, CoinDesk for current and historical pricing
-- **AI analysis** — OpenRouter LLM for narrative generation and verdict
+- **Before buying a new token** — get the full picture before you commit capital.
+- **Checking on existing holdings** — has the risk profile changed since you bought?
+- **Comparing similar tokens** — "Compare $ARB vs $OP" gives you a side-by-side breakdown.
+- **Verifying a contract** — paste an address to check if the contract is safe to interact with.
 
 <Tip>
   Token Analysis works best with well-known tokens that have significant on-chain activity. For very new or obscure tokens, the data may be limited — always cross-reference with your own research.

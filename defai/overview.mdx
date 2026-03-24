@@ -1,144 +1,81 @@
 ---
-title: "DeFAI Terminal"
-description: "Chat-based DeFi terminal with 5 specialized AI agents. Token analysis, contract audits, yield scanning, wallet intelligence, and image generation — all through conversation."
+title: "Meet Your DeFi Agents"
+description: "Five specialized AI agents you can chat with. Token research, contract security, yield hunting, wallet analysis, and cross-chain swaps — all through conversation."
 ---
 
-# DeFAI terminal
+# Meet your DeFi agents
 
-DeFAI (`/defai`) is a chat-based interface that connects you to 5 specialized AI agents. Each agent has different capabilities — from deep token due diligence to smart contract auditing to yield optimization. You talk to them in natural language and they execute on-chain actions directly.
+DeFAI is your chat-based DeFi terminal. Five specialized AI agents, each built for a different job. You talk to them in plain English. They do the heavy lifting.
 
-The same chat infrastructure powers three pages: **DeFAI** (`/defai`), **Chat** (`/chat`), and **Security** (`/security`). They share the message system, session management, and inline action panels.
+Want to know if a token is safe? Ask. Need to find the best yield on your USDC? Ask. Want to swap tokens across chains? Just say the word.
 
-## Chat interface layout
+## How it works
 
-```
-┌─────────────────────────────────────────────┐
-│  Header (back button + wallet connect)       │
-├──────────┬──────────────────────────────────┤
-│ Sidebar  │  Message area                     │
-│ ────────│                                    │
-│ New Chat │  [Agent selection grid]           │
-│ Sessions │  or                                │
-│ sorted   │  [Message bubbles with panels]    │
-│ by last  │                                    │
-│ message  │                                    │
-│          ├──────────────────────────────────┤
-│          │  Input bar (model selector +       │
-│          │  attachments + wallet chip + send) │
-└──────────┴──────────────────────────────────┘
-```
-
-### Sidebar
-
-- **New Chat** button — creates a new session with optional agent filter
-- **Session list** — sorted by last message time (newest first)
-- Each session shows: title (2-line clamp), relative timestamp, last message preview (1-line clamp, monospace)
-- **Bulk delete mode** — click trash icon → checkboxes appear → select sessions → delete
-- Individual session delete with confirmation modal
-- Desktop: fixed left panel (w-72). Mobile: slide-out overlay (80vw width) with backdrop dismiss.
-
-### Input bar
-
-- **Auto-expanding textarea** — grows from 48px to max 150px as you type
-- **Model selector** (left) — dropdown to switch LLM models. Shows model icon + name (name hidden on mobile)
-- **File attachments** — support for images (max 5MB), PDFs, docs, txt files. Preview bar appears before send.
-- **Wallet address chip** — your payment wallet address, clickable to copy
-- **Send button** — disabled when wallet not ready or input empty
+1. **Open a chat** — pick the agent you need (or just start typing and we'll route you)
+2. **Ask your question** — use natural language, like talking to a smart friend who knows DeFi inside out
+3. **Get results** — the agent researches, analyzes, and gives you a clear answer with actionable next steps
+4. **Execute in one click** — swaps, deposits, and bridges happen right inside the chat. No switching apps.
 
 ## The 5 agents
 
-When you open a new chat with no messages, you see the agent selection grid:
-
 <CardGroup cols={3}>
   <Card title="Token Analysis" icon="coins" href="/defai/token-analysis">
-    Comprehensive token due diligence. Risk scoring, verdict (BUY/HOLD/SELL/AVOID), market data, security analysis, DexScreener charts. Inline result panel with 5 tabs.
+    Is this token legit? Get a full breakdown — risk score, market data, security checks, and a clear BUY/HOLD/SELL/AVOID verdict. Think of it as due diligence in 30 seconds.
   </Card>
   <Card title="Contract Audit" icon="shield-halved" href="/defai/contract-audit">
-    Smart contract security audit. Risk gauge (0-100), severity-coded findings with code snippets, recommendations. Optional deep audit with Nemesis + Pashov analysis.
+    Paste a contract address and get a security report. Vulnerability scan, risk scoring, severity-rated findings, and recommendations. Know what you're interacting with before you sign.
   </Card>
   <Card title="DeFi Yields" icon="seedling" href="/defai/yield-scanning">
-    Best yield opportunities on Base. Score-ranked opportunities with APY, TVL, risk analysis. One-click deposits into Morpho, Aave, and Compound.
+    Find the best places to put your money to work. The agent scans hundreds of opportunities, scores them by risk and return, and lets you deposit in one click.
   </Card>
   <Card title="Wallet Intelligence" icon="wallet" href="/defai/wallet-intelligence">
-    Multi-chain wallet analysis. Holdings breakdown by chain, risk score, portfolio overview, AI behavioral profile, security warnings, and recommendations.
+    Analyze any wallet. See what they hold, how they trade, what risks they're taking, and what the AI thinks about their strategy. Works on your own wallet or anyone else's.
   </Card>
   <Card title="Prediction Markets" icon="chart-bar">
-    Browse Polymarket markets, analyze odds, and execute trades directly from the chat. Market grids, single market analysis, and trade confirmation panels.
+    Browse markets, analyze odds, and execute trades directly from the chat. Same power as the full Markets terminal, but through conversation.
   </Card>
 </CardGroup>
 
-Each agent card shows: avatar (DiceBear Bottts generated from seed), badge icon, agent name, description, and hover animation. Click to select the agent and see template prompts.
+## Try it out
 
-### Template prompts
-
-After selecting an agent, you see "Try asking..." with pre-built prompts. For example:
+After selecting an agent, you'll see suggested prompts to get you started. Here are some examples:
 
 **Token Analysis:**
 - "Analyze $ETH: fundamentals, risks, and outlook"
-- "Due diligence on $PEPE: is it a solid hold?"
-- "Compare $ARB vs $OP: which L2 token is stronger?"
+- "Is $PEPE a solid hold or should I dump it?"
+- "Compare $ARB vs $OP — which L2 token is stronger?"
 
 **Contract Audit:**
 - "Audit this contract: 0x..."
-- "Check for reentrancy vulnerabilities in this token contract"
 - "Is this contract safe to interact with?"
 
-Click any template to pre-fill the input and send.
+**DeFi Yields:**
+- "Where can I get the best yield on USDC?"
+- "Find me low-risk lending opportunities"
 
-## Message rendering
+**Wallet Intelligence:**
+- "Analyze this wallet: 0x..."
+- "What's the risk profile of my portfolio?"
 
-Messages render as bubbles:
+Click any suggestion to send it instantly.
 
-- **User messages** — right-aligned, dark background, monospace font, copy button on hover
-- **Agent messages** — left-aligned, white background, markdown rendering with `ReactMarkdown` + `remarkGfm`
-- **Streaming** — agent responses stream in real-time via SSE. Text appears progressively as the LLM generates it.
-- **Inline panels** — action results render as rich interactive components embedded in the message bubble
+## What happens when an agent acts
 
-## Inline action panels
+When an agent needs to do something on-chain — like execute a swap, deposit into a yield vault, or bridge tokens — you'll see a progress card right in the chat. It walks you through each step:
 
-When an agent performs an action, the result renders as an interactive panel inside the chat. These panels can execute on-chain transactions:
+1. **Checking** — the agent verifies the transaction details
+2. **Approving** — you approve the token spend (if needed)
+3. **Executing** — the transaction is submitted
+4. **Done** — you get a transaction link to verify on the blockchain
 
-| Panel | Trigger | What it does |
-|-------|---------|-------------|
-| **SwapExecuteInline** | Agent prepares a swap | Shows from/to tokens, amounts, price impact, gas estimate. Multi-step progress: Check → Approve → Execute → Done. Executes via LI.FI. |
-| **UniswapLPInline** | Agent prepares LP position | Shows token amounts, fee tier, price range, APR, IL risk. Steps: Check → Approve 1 → Approve 2 → Mint → Done. |
-| **UniswapLPRemoveInline** | Agent removes LP | Remove liquidity or collect fees. Steps adjust based on mode. |
-| **MorphoDepositInline** | Agent prepares Morpho deposit | Shows amount, vault name, APY. Steps: Check → Approve → Deposit → Done. |
-| **DefiDepositInline** | Agent prepares Aave/Compound deposit | Protocol-specific. Steps: Check → Approve → Deposit → Done. |
-| **TransferExecuteInline** | Agent prepares token transfer | Shows amount, recipient, chain. Steps: Check → Send → Done. |
-| **X402PaymentPanel** | Premium feature requires payment | USDC payment request with balance check, approval, retry mechanism (5 attempts, 5s delay). |
+You're always in control. Nothing happens without your approval.
 
-Each inline panel has a multi-step progress indicator with checkmarks for completed steps, a spinner for the current step, and dimmed upcoming steps. On completion, a transaction hash links to the block explorer.
+## Premium features
 
-## Sessions and persistence
+Some advanced features (like deep contract audits or detailed token reports) cost a small USDC fee. You'll always see the price before you approve — no surprises.
 
-- Sessions persist in **Supabase** + local **Zustand** store
-- Each session stores: ID, title (from first user message), selected agent, selected model, messages, wallet address, last message timestamp
-- Sessions hydrate from Supabase on app load via `hydrateFromSupabase(address)`
-- Messages include metadata with action type, transaction hash, and agent context for tool result continuity across requests
+The Security page uses the same Contract Audit agent with automatic payments enabled, so audits happen instantly without extra steps. See [Contract Audit](/defai/contract-audit) for details.
 
-## Payment flow
-
-Some agents require USDC payment (e.g., premium token analysis, image generation):
-
-<Steps>
-  <Step title="Agent returns payment requirement">
-    The message metadata contains `x402_payment_required` with amount, recipient, and description.
-  </Step>
-  <Step title="X402PaymentPanel renders">
-    Shows: payment amount in USDC, your balance, approve button. Checks if balance is sufficient.
-  </Step>
-  <Step title="EIP-3009 payment executes">
-    Gasless payment via Circle EIP-3009 (relayer pays gas). Your Privy embedded wallet signs an off-chain authorization.
-  </Step>
-  <Step title="Retry with proof">
-    The payment proof (tx hash, from, to, amount, token, timestamp) is sent back to the agent with `[RUN_WITH_PAYMENT]` prefix. Up to 5 retry attempts with 5-second delays for RPC indexing.
-  </Step>
-  <Step title="Agent executes and returns result">
-    The agent verifies the payment on-chain and executes the requested action. The result panel renders in the chat.
-  </Step>
-</Steps>
-
-<Info>
-  The Security page (`/security`) uses the same chat infrastructure but is hardcoded to the Contract Audit agent with auto-payment enabled — payments execute silently without prompting you. See [Contract Audit](/defai/contract-audit) for details.
-</Info>
+<Tip>
+  Not sure which agent to use? Just start a chat and describe what you need. The system will point you in the right direction.
+</Tip>

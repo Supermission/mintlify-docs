@@ -1,157 +1,142 @@
 ---
 title: "Market Detail Panel"
-description: "Everything you see when you click a market — prices, orderbook, charts, AI War Room, whale data, limit orders, and related markets."
+description: "Everything you see when you open a market — live prices, orderbook, charts, AI analysis, whale data, and order placement."
 ---
 
 # Market detail panel
 
-Click any market card to open the detail panel — a slide-over panel on the right side of the screen (max-width: `xl`). This is where you do your real analysis before committing capital. The panel has a sticky header with navigation and two main tabs: **Trade** and **AI War Room**.
+Click any market card to open the detail panel on the right side of your screen. This is where you do your real research before committing money. The panel has two main tabs: **Trade** and **AI War Room**.
 
 ## Panel header
 
-| Element | Description |
-|---------|-------------|
+| Element | What it does |
+|---------|--------------|
 | **Back button** | Returns to the previous market or closes the panel |
-| **Bookmark button** | Add/remove from watchlist |
-| **Close button** | Closes the panel entirely |
+| **Bookmark button** | Save or remove from your watchlist |
+| **Close button** | Closes the panel |
 
-## Market info section
+## Market info
 
-At the top of the panel:
+At the top of the panel you'll find:
 
-- **Question** — full market question text (expandable if longer than 3 lines)
-- **Description** — additional context about the market (expandable)
-- **Tags** — all category badges, AI Pick badge, asset tag, timeframe tag, trending/hot indicators
+- **Question** — the full market question (expandable if it's long)
+- **Description** — additional context about what the market covers
+- **Tags** — category badges, AI Pick badge, asset tag, timeframe, trending indicators
 
 ## Trade tab
 
-The default tab. Contains everything you need to evaluate and execute a trade.
+This is the default tab. Everything you need to evaluate and place a trade.
 
-### AI Signals panel
+### AI signals
 
-If the AI has a signal for this market, it appears at the top of the Trade tab:
+If the AI has a view on this market, you'll see it right at the top:
 
 - **Signal type** — Sentiment, Momentum, or Spot Price
-- **AI pick** — which outcome the AI favors (YES or NO) with confidence score
-- **Summary** — brief AI reasoning (from the multi-agent analysis)
-- **Source articles** — links to the news/data sources the AI used (if available)
+- **AI pick** — which outcome the AI favors (Yes or No) with a confidence score
+- **Summary** — a brief explanation of why
+- **Sources** — links to the news or data the AI used, when available
 
-If no API signals are available, the panel falls back to catalog data: sentiment, favorite outcome, confidence, and summary from the most recent analysis run.
+### Market stats
 
-### Market data grid
+A quick-reference grid with the numbers that matter:
 
-A compact data grid showing:
+| Metric | What it tells you |
+|--------|-------------------|
+| **Volume** | Total USDC ever traded in this market |
+| **24h Volume** | USDC traded in the last 24 hours |
+| **Liquidity** | How much you can trade without significantly moving the price |
+| **Spread** | The gap between the best buy and sell prices. Tighter is better. |
+| **24h Change** | How much the price has moved in the last day |
+| **Ends in** | Countdown to when the market resolves |
 
-| Metric | Description |
-|--------|-------------|
-| **Volume** | Lifetime trading volume in USDC |
-| **24h Volume** | Trading volume in the last 24 hours |
-| **Liquidity** | Current orderbook depth (how much you can trade without moving the price) |
-| **Spread** | Gap between best bid and best ask (tighter = better for traders) |
-| **24h Change** | Price change in the last 24 hours |
-| **Ends in** | Countdown to market resolution |
+### Live prices
 
-### Live prices (hero display)
+Large, prominent Yes and No prices in cents. These update in real time. Animated probability bars show the Yes/No split visually.
 
-Large, prominent YES and NO prices in cents. These update in real-time via SSE. Animated probability bars show the YES/NO split as horizontal colored bars.
+### Placing orders
 
-### Order types
-
-Toggle between **Market** and **Limit** at the top of the order section:
+You can choose between two order types at the top of the order section:
 
 <Tabs>
   <Tab title="Market Order">
-    Same flow as inline trading but in the detail panel:
-    1. Click **YES** or **NO**
-    2. Enter USDC amount (presets or custom)
-    3. See shares, average price, potential return
-    4. Confirm → FAK execution on Polymarket's CLOB
+    Buy at the current best available price. Same flow as trading from the card:
+    1. Click **Yes** or **No**
+    2. Enter your USDC amount (presets or custom)
+    3. See your shares, average price, and potential return
+    4. Confirm to execute instantly
   </Tab>
   <Tab title="Limit Order">
-    Set your own price and wait for the market to fill you:
-    1. Select outcome (YES or NO)
-    2. Enter your price in cents (minimum tick: $0.01)
-    3. Enter USDC amount or share count (the other auto-calculates)
-    4. Click **Place Limit Order** → GTC order goes on Polymarket's book
-    5. Order appears in the **Open Orders** section below and in the Portfolio → Orders tab
+    Set your own price and wait for the market to come to you:
+    1. Pick your outcome (Yes or No)
+    2. Enter your price in cents (from $0.01 to $0.99)
+    3. Enter your USDC amount or share count — the other calculates automatically
+    4. Click **Place Limit Order**
+    5. Your order sits on the orderbook until it gets filled or you cancel it
 
-    The form validates: price must be 0.01-0.99, amount must be positive, and your balance must cover the order.
+    The form checks that your price is valid and your balance can cover the order.
   </Tab>
 </Tabs>
 
 ### Orderbook
 
-Two visualizations of the current orderbook:
+Two ways to see the current buy and sell interest:
 
-**OrderBook Ladder** — a traditional bid/ask ladder:
-- Left column: bid sizes (emerald/green background fill)
-- Center column: price levels
-- Right column: ask sizes (rose/red background fill)
-- Size background fills proportionally to the largest order at that level
-- Shows top 8 levels by default
-- Hover to see cumulative depth
+**Ladder view** — a traditional price ladder:
+- Green rows on the left show buy orders at each price level
+- Red rows on the right show sell orders
+- Bar fills show the relative size of orders at each level
+- Hover over any level to see cumulative depth
 
-**OrderBook Depth** — a cumulative depth chart:
-- Bids on the left (emerald gradient), asks on the right (rose gradient)
-- Horizontal bars for each price level showing cumulative size
-- Midpoint price displayed at center
-- Hover tooltip shows size and cumulative total
+**Depth view** — a visual chart of cumulative order depth:
+- Green area shows total buy interest, red shows total sell interest
+- The midpoint price sits at the center
+- Hover for exact sizes at each level
 
 ### Price chart
 
-Interactive price chart powered by TradingView's `lightweight-charts`:
-- **Timeframes**: 6H, 1D, 1W, 1M, ALL (button toggle)
-- **Chart type**: Area series with green-to-emerald gradient fill
-- **Y-axis**: Percentage (0-100%)
-- **Crosshair** and tooltips on hover
-- Responsive to panel width
-- Fetches OHLC data from the API for the selected token
+An interactive chart showing how the market price has moved over time:
+- **Timeframes**: 6H, 1D, 1W, 1M, ALL
+- **Y-axis**: Probability from 0% to 100%
+- Hover for precise prices at any point in time
 
-### Open orders panel
+### Open orders
 
-If you have active limit orders on this market, they appear here with:
-- Order side (YES/NO), price, size
-- Cancel button for each order
-- Refresh button
+If you have active limit orders on this market, they appear here with the order details and a cancel button for each one.
 
 ### Top holders (Whale Intelligence)
 
-Shows the largest positions in this market:
-- **Whale sentiment bar** — aggregated YES vs NO split among large holders (green/red bar)
-- **Stats**: whale count, total shares held, top-1 concentration percentage
-- **Waterfall list** (top 20 holders): avatar/initials, username or truncated address, position size with proportional bar fill, outcome badge (YES/NO)
-- **Refresh button** for manual update
+See who's holding the biggest positions:
 
-When whales lean more than 55% in one direction, a "Smart money leans YES/NO" insight surfaces.
+- **Whale sentiment bar** — shows how large holders are split between Yes and No
+- **Key stats**: number of whales, total shares held, how concentrated the top position is
+- **Leaderboard**: the top 20 holders with their position sizes and which side they're on
+
+When whales lean more than 55% in one direction, you'll see a "Smart money leans Yes/No" insight.
 
 ### Related markets
 
-If the market belongs to an event with multiple sub-markets, related markets appear as a mini grid at the bottom. Click any to navigate within the detail panel.
+If this market belongs to an event with multiple sub-markets, you'll see the related ones at the bottom. Click any to navigate without leaving the panel.
 
-### Market comments
+### Comments
 
-Community discussion threads for the market. Shows comments with:
-- Author address (truncated)
-- Relative timestamp
-- Like count
-- Nested reply threads
+Community discussion about the market. See what other traders are thinking, debating, and flagging. More details in [Market Comments](/markets/market-comments).
 
 ## AI War Room tab
 
-Switch to the AI tab to see the full multi-agent analysis. This tab contains five components:
+Switch to this tab for the full AI analysis. Five sections give you a complete picture:
 
-1. **Edge Calculator** — AI confidence % vs market price → edge percentage. Green if positive (AI thinks market is underpriced), red if negative. Visual flow: AI % → arrow → Market % → arrow → Edge %.
+1. **Edge Calculator** — compares the AI's confidence with the current market price. Green means the AI thinks the market is underpriced. Red means overpriced.
 
-2. **Conviction Meter** — circular SVG arc gauge (270° sweep). Fill is calculated as `(agreementRatio × confidence) / 100`. Color: gray below 40%, amber 40-70%, emerald 70%+. At "extreme" conviction (4/4 agents agree at 80%+), the meter pulses with a scale animation and plays an audio chime (C5→E5 notes).
+2. **Conviction Meter** — a visual gauge showing how strongly the AI feels. Below 40% is low conviction, 40–70% is moderate, above 70% is high conviction. At extreme levels (all AI agents agree with high confidence), the meter pulses to grab your attention.
 
-3. **Agent Debate Panel** — 2×2 grid showing up to 4 agents. Each **Agent Card** shows: colored avatar circle, agent name (Bull, Bear, Contrarian, Quant), sentiment badge (bullish/bearish/neutral), confidence %, and key reasoning summary. Spring entrance animation.
+3. **Agent Debate** — four AI agents each share their take: Bull, Bear, Contrarian, and Quant. Each shows their stance (bullish, bearish, or neutral), confidence level, and key reasoning.
 
-4. **Key Doubt Card** — the Contrarian agent's single biggest risk to the thesis. If you read nothing else, read this.
+4. **Key Doubt** — the Contrarian agent's single biggest risk to the thesis. If you only read one thing, read this.
 
-5. **Accuracy Scoreboard** — historical accuracy metrics for the AI system on similar market categories. Win rate, precision, calibration data.
+5. **Accuracy Scoreboard** — how the AI has performed historically on similar markets. Win rate, precision, and calibration data.
 
 See [AI War Room](/ai/war-room) for the full breakdown.
 
 <Tip>
-  The ideal workflow: scan the Browse grid for AI Pick badges → open the detail panel → check the Edge Calculator and Conviction Meter → read the Agent Debate for reasoning → check the Key Doubt to understand the risk → look at whale positions in Top Holders → check the orderbook for liquidity → execute via Market or Limit order.
+  The ideal workflow: scan Browse for AI Pick badges, open the detail panel, check the Edge Calculator and Conviction Meter, read the Agent Debate for reasoning, review the Key Doubt for risk, look at whale positions, check orderbook liquidity, then place your trade.
 </Tip>

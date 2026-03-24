@@ -3,9 +3,9 @@ title: "Wallet Intelligence"
 description: "Multi-chain wallet analysis with holdings breakdown, risk scoring, AI behavioral profiling, and security recommendations."
 ---
 
-# Wallet intelligence
+# Know any wallet inside out
 
-The **Wallet Intelligence** agent analyzes any wallet address across multiple chains. It provides portfolio composition, risk assessment, behavioral analysis, and actionable recommendations.
+The **Wallet Intelligence** agent analyzes any wallet address across multiple chains. Get portfolio composition, risk assessment, behavioral analysis, and actionable recommendations — all from a single prompt.
 
 ## How to use
 
@@ -13,28 +13,24 @@ The **Wallet Intelligence** agent analyzes any wallet address across multiple ch
 - `"What tokens does vitalik.eth hold?"`
 - `"Check my portfolio risk exposure across chains"`
 
-## Result panels
+## What you get
 
 Two levels of detail depending on the analysis:
 
-### WalletResultPanel (compact)
+### Quick summary
 
 | Element | Description |
 |---------|-------------|
 | **Address** | Full address or ENS name, with chain indicator |
 | **Risk badge** | LOW (green), MED (yellow), HIGH (red) |
-| **Stats grid** | Balance, transaction count, token count, activity level |
-| **Summary** | AI-generated markdown narrative |
-| **Warnings** | Red-highlighted risk factors (max 4 shown) |
-| **Recommendations** | Green-highlighted action items (max 4 shown) |
+| **Stats** | Balance, transaction count, token count, activity level |
+| **Summary** | AI-generated narrative about the wallet's profile |
+| **Warnings** | Red-highlighted risk factors |
+| **Recommendations** | Green-highlighted action items |
 
-### WalletIntelligencePanel (detailed)
+### Detailed analysis
 
-A large expandable panel with collapsible sections:
-
-<Accordion title="Header">
-  Wallet address, wallet type badge (EOA, Smart Contract, Multisig), activity level indicator. Copy address button with checkmark feedback.
-</Accordion>
+A full expandable report with these sections:
 
 <Accordion title="Portfolio Overview">
   Total portfolio value in USD. Key metrics: number of tokens, chains active, estimated daily volume, portfolio age.
@@ -45,7 +41,7 @@ A large expandable panel with collapsible sections:
 </Accordion>
 
 <Accordion title="Portfolio Analysis">
-  Allocation breakdown (pie chart representation), volatility assessment, concentration risk rating. Shows how diversified or concentrated the portfolio is.
+  Allocation breakdown, volatility assessment, concentration risk rating. Shows how diversified or concentrated the portfolio is.
 </Accordion>
 
 <Accordion title="AI Profile">
@@ -61,21 +57,19 @@ A large expandable panel with collapsible sections:
 </Accordion>
 
 <Accordion title="Recommendations">
-  AI-generated action items. Max 3 shown by default with "Show all" toggle. May include: rebalance suggestions, approval revocations, DeFi optimization tips.
+  AI-generated action items: rebalance suggestions, approval revocations, DeFi optimization tips.
 </Accordion>
 
 <Accordion title="Warnings">
-  Red-highlighted risk items. Max 3 shown by default. May include: high concentration in a single token, interaction with unverified contracts, stale approvals.
+  Red-highlighted risk items: high concentration in a single token, interaction with unverified contracts, stale approvals.
 </Accordion>
 
-## Data sources
+## Use cases
 
-| Source | Data provided |
-|--------|--------------|
-| **Alchemy** | Token balances, transfer history, NFT data |
-| **Blockdaemon** | Multi-chain balance enrichment |
-| **Nansen** | On-chain wallet intelligence and labels |
-| **AI analysis** | Behavioral profiling and recommendations |
+- **Audit your own wallet** — find stale approvals, concentration risk, and optimization opportunities.
+- **Research whale wallets** — understand what smart money is holding and how they're positioned.
+- **Vet counterparties** — before interacting with an unknown address, check its history and risk profile.
+- **Track portfolios** — analyze any public address to see holdings, activity, and behavioral patterns.
 
 <Info>
   Wallet Intelligence can analyze any public wallet address — not just your own. Use it to research whale wallets, track smart money, or audit counterparties before interacting with them.

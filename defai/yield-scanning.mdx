@@ -3,9 +3,11 @@ title: "Yield Scanning"
 description: "AI-powered yield discovery across DeFi protocols. Score-ranked opportunities with APY, TVL, risk analysis, and one-click deposits."
 ---
 
-# Yield scanning
+# Find the best yields without the legwork
 
 The **DeFi Yields** agent scans 1,000+ liquidity pools and lending markets across Base protocols to find the best risk-adjusted yield opportunities. Results are score-ranked and come with one-click deposit execution.
+
+No more hopping between protocol dashboards. Ask a question and get ranked results.
 
 ## How to use
 
@@ -13,11 +15,9 @@ The **DeFi Yields** agent scans 1,000+ liquidity pools and lending markets acros
 - `"Find low-risk stablecoin yields above 5% APY"`
 - `"Compare lending rates across Base protocols"`
 
-## Result panel: DefiYieldResultPanel
+## What you see
 
-The result renders as a paginated card list (3 opportunities per page):
-
-### Per opportunity
+Each opportunity shows:
 
 | Element | Description |
 |---------|-------------|
@@ -26,31 +26,32 @@ The result renders as a paginated card list (3 opportunities per page):
 | **APY** | Annual percentage yield, color-coded by tier |
 | **TVL** | Total value locked in the pool |
 | **Risk score** | AI-assessed risk level |
-| **Stablecoin flag** | Whether the pool involves only stablecoins (lower IL risk) |
+| **Stablecoin flag** | Whether the pool involves only stablecoins (lower impermanent loss risk) |
 | **IL risk** | Impermanent loss risk indicator |
-| **Execution button** | Opens pool details or triggers inline deposit |
+| **Deposit button** | Opens the deposit flow or pool details |
 
-### Additional sections
-
-- **Filters applied** — shows what filters the AI used to narrow results
-- **AI insights** — narrative explaining the current yield landscape and recommendations
-- **Pagination** — navigate through opportunities (3 per page)
+You also get an AI-generated narrative about the current yield landscape and any trends worth noting.
 
 ## One-click deposits
 
-When you select an opportunity, the agent prepares an inline deposit:
+When you select an opportunity, the agent walks you through an inline deposit:
 
-**For Morpho vaults** → `MorphoDepositInline`:
-- Shows: amount, vault name, APY
-- Steps: Check balance → Approve USDC → Deposit → Done
-- Uses `useMorphoDeposit()` hook
+<Steps>
+  <Step title="Check balance">
+    The agent confirms you have enough USDC to deposit.
+  </Step>
+  <Step title="Approve">
+    If needed, authorize the protocol to use your USDC. This only happens the first time.
+  </Step>
+  <Step title="Deposit">
+    Execute the deposit into the pool or lending market.
+  </Step>
+  <Step title="Done">
+    Confirmation with a transaction link. Your position is live.
+  </Step>
+</Steps>
 
-**For Aave/Compound** → `DefiDepositInline`:
-- Shows: amount, protocol name, APY
-- Steps: Check balance → Approve USDC → Deposit → Done
-- Uses `useDefiInvest()` hook
-
-Each deposit shows multi-step progress with checkmarks, spinners, and transaction hash links.
+Each step shows progress indicators so you know exactly where you are.
 
 ## Protocols covered
 

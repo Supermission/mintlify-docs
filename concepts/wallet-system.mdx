@@ -1,106 +1,55 @@
 ---
-title: "Wallet System"
-description: "How Supermission handles wallets, keys, and authentication. MPC infrastructure, non-custodial design, and zero-gas UX."
+title: "Your Wallet"
+description: "How your wallet works on Supermission. Created automatically, secured for you, zero hassle."
 ---
 
-# Wallet architecture
+# Your wallet
 
-Supermission uses Privy's MPC (Multi-Party Computation) infrastructure to give users a crypto wallet without any of the traditional pain points — no seed phrases, no gas management, no chain switching.
+When you sign up for Supermission, a wallet is created for you automatically. No seed phrases to write down. No browser extensions to install. No gas fees to worry about.
+
+Your funds are yours — we literally cannot access them. You sign in with your email, and your wallet is there.
 
 ## How it works
 
 <Steps>
-  <Step title="User signs up">
-    Email, Google OAuth, or connect an existing wallet (MetaMask, Coinbase Wallet, WalletConnect).
+  <Step title="You sign up">
+    Use your email, Google, or connect an existing wallet like MetaMask or Coinbase Wallet.
   </Step>
-  <Step title="MPC wallet created">
-    Privy generates a smart wallet on Base. The private key is split into multiple shards using MPC — no single party (including Supermission or Privy) ever has the full key.
+  <Step title="Wallet created instantly">
+    A secure wallet is generated for you on sign-up. Your private key is protected using advanced split-key security — no single party (including us) ever has full access.
   </Step>
-  <Step title="Key reconstruction on sign-in">
-    When you authenticate, the key shards are reconstructed securely in a trusted execution environment. You can sign transactions without ever seeing or managing a private key.
+  <Step title="You sign in, wallet's ready">
+    Every time you log in, your wallet is securely reconstructed. You never see or manage a private key. It just works.
   </Step>
-  <Step title="Transactions signed locally">
-    Every trade is signed by your wallet. The signed transaction is submitted to the blockchain. Supermission cannot execute transactions without your authentication.
+  <Step title="You stay in control">
+    Every trade is signed by your wallet. We cannot execute transactions without your authentication. Period.
   </Step>
 </Steps>
 
-## Key properties
+## What this means for you
 
-| Property | Description |
-|----------|-------------|
-| **Non-custodial** | Supermission never holds your funds or full private key. We technically cannot access your wallet. |
-| **No seed phrases** | MPC eliminates the 24-word recovery phrase. Recovery is handled through your email/social login. |
-| **Sponsored gas** | All transaction gas fees are covered. You never need ETH. Trades, bridges, redemptions — all free. |
-| **No chain switching** | Your wallet lives on Base. When you trade on Polymarket (Polygon), we bridge automatically. Invisible to you. |
-| **Batch transactions** | Multiple operations (approve + swap, bridge + trade) can execute in a single click. |
+| Benefit | What it means |
+|---------|--------------|
+| **Your money, your control** | We never hold your funds. We can't move your money, freeze your account, or access your wallet. Technically can't — not "promise we won't." |
+| **No seed phrases** | You don't need to memorize or store 24 random words. If you lose your phone, just log back in with your email. |
+| **Zero gas fees** | Every transaction fee is covered by us. You never need to buy ETH or worry about gas. Trades, swaps, bridges — all free for you. |
+| **No chain switching** | Your wallet handles multiple chains behind the scenes. When you trade prediction markets, bridge tokens, or deposit into DeFi — the routing happens automatically. You don't even notice. |
+| **Batch transactions** | Multiple operations (like approve + swap) can happen in a single click. Less waiting, less friction. |
 
-## Multi-chain flow
+## How trading works behind the scenes
 
-Your wallet lives on Base, but trades execute on Polygon. Here's how that works seamlessly:
+You confirm a trade. Your wallet signs it. The transaction goes through. That's all you need to know.
 
-```
-Your Base Wallet (USDC)
-        │
-        ▼ Circle CCTP Bridge
-Polygon (USDC.e)
-        │
-        ▼ Polymarket CLOB
-Position Created
-        │
-        ▼ On resolution / sell
-USDC.e released on Polygon
-        │
-        ▼ Auto-bridge back
-Your Base Wallet (USDC)
-```
+Behind the scenes, your USDC gets routed to wherever it needs to be. If you're trading prediction markets, the bridging happens automatically. When you sell or win, the funds come back to your wallet. You see step 1 (confirm the trade) and the last step (money in your wallet). Everything in between is invisible.
 
-You see step 1 (confirm trade) and the last step (position in portfolio). Everything in between is invisible.
+## Connecting an existing wallet
 
-## Authentication flow
-
-<Tabs>
-  <Tab title="New User">
-    1. Login via Privy (email code or Google OAuth)
-    2. Privy creates embedded MPC wallet on Base
-    3. Wallet address assigned to your account
-    4. Waitlist check — if approved, full access granted
-    5. Session token stored, auto-renewed
-  </Tab>
-  <Tab title="Returning User">
-    1. Login via same method (email or Google)
-    2. Privy reconstructs wallet from MPC shards
-    3. Session validated against Supabase
-    4. Full terminal access restored
-  </Tab>
-  <Tab title="Existing Wallet">
-    1. Connect MetaMask, Coinbase Wallet, or WalletConnect
-    2. External wallet linked to your Privy account
-    3. Can use either embedded or external wallet for trading
-    4. Multi-wallet support — link multiple wallets to one account
-  </Tab>
-</Tabs>
-
-## Security model
-
-<CardGroup cols={2}>
-  <Card title="Key Compromise" icon="key">
-    MPC splits your key across multiple parties. Compromising one shard is useless without the others. No single point of failure.
-  </Card>
-  <Card title="Phishing Protection" icon="shield-halved">
-    No seed phrase to steal. No private key to export. Authentication is through your email/social provider with Privy's security infrastructure.
-  </Card>
-  <Card title="Gas Griefing" icon="gas-pump">
-    Gas is fully sponsored by Supermission. You never need to hold ETH or worry about gas price manipulation.
-  </Card>
-  <Card title="Front-Running" icon="lock">
-    Orders go directly to Polymarket's CLOB — not through a public mempool. No MEV exposure on your trades.
-  </Card>
-</CardGroup>
+Already have a MetaMask, Coinbase Wallet, or WalletConnect wallet? You can connect it to your Supermission account. You can use either your Supermission wallet or your connected wallet for trading — and link multiple wallets to one account.
 
 <Warning>
-  Non-custodial means non-custodial. If you lose access to your email/social login and cannot recover through Privy's recovery flow, we cannot help you access your wallet. Secure your authentication credentials.
+  Your wallet is truly yours. If you lose access to your email or social login and can't recover it, we cannot help you get back into your wallet. Make sure your login credentials are secure.
 </Warning>
 
-<Info>
-  For developers building agents: server-side wallets are also available with AES-256 encrypted private key storage and configurable spending policies. See [Agent Economy](/developers/agent-economy) for details.
-</Info>
+<Tip>
+  The best wallet experience is one you don't notice. If you're thinking about private keys, gas fees, or which chain you're on while trading — something has gone wrong. We designed Supermission so you never have to.
+</Tip>

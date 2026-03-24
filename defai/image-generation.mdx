@@ -1,22 +1,22 @@
 ---
 title: "Image Generation"
-description: "AI image generation with style presets, quality tiers, and variation support. Generate and customize images through conversation."
+description: "AI image generation with style presets, quality tiers, and variation support. Create and customize images through conversation."
 ---
 
-# Image generation
+# Generate images from a prompt
 
-The DeFAI chat supports AI-powered image generation via DALL-E and Stable Diffusion models through OpenRouter. Generate images through natural language prompts, then customize with variations, style changes, and quality upgrades.
+The DeFAI chat supports AI-powered image generation. Describe what you want, pick your options, and get a result in seconds. Then refine it with variations, style changes, and quality upgrades.
 
 ## How to use
 
-Select any agent or type directly:
+Type directly in the chat:
 - `"Generate a cyberpunk city at night"`
 - `"Create an image of a futuristic trading terminal"`
 - `"Draw a logo concept for a crypto project"`
 
-## Parameter request
+## Options
 
-Before generation, a **ParamRequestPanel** may appear with:
+Before generation, you can choose:
 
 | Option | Choices |
 |--------|---------|
@@ -24,20 +24,17 @@ Before generation, a **ParamRequestPanel** may appear with:
 | **Aspect ratio** | 1:1, 16:9, 9:16, 4:3, 3:4 |
 | **Style preset** | Auto, Vibrant, Muted, Cinematic, B&W, Anime, Neon, Vintage |
 | **Background** | Auto, Transparent, White, Blur |
-| **AI model** | Model selector for choosing the generation model |
 
-## Result panel: ImageGenResultPanel
+## Results
 
-| Element | Description |
-|---------|-------------|
-| **Header** | "SuperImageGen" icon, cost badge (USDC amount), info toggle |
-| **Image display** | Square aspect ratio with loading skeleton and error state fallback |
-| **Download button** | Save the generated image |
-| **Info panel** (collapsible) | Model used, image size, detected style |
+Your generated image appears with:
+- **Cost badge** showing USDC spent
+- **Download button** to save the image
+- **Info panel** (collapsible) with image size and detected style
 
-## Action cards
+## Customization
 
-After generation, three action cards appear for customization:
+After generation, three action cards let you refine:
 
 <CardGroup cols={3}>
   <Card title="Variation" icon="clone">
@@ -51,16 +48,17 @@ After generation, three action cards appear for customization:
   </Card>
 </CardGroup>
 
-## Image modification
+You can also apply pre-built modification presets (Vibrant, Neon, Vintage, Anime, Cinematic, Enhance, B&W) or type a custom prompt for specific modifications like "make the sky more dramatic" or "add neon lighting."
 
-A **ImageModificationPanel** also supports:
-- Pre-built modification presets (Vibrant, Neon, Vintage, Anime, Cinematic, Enhance, B&W)
-- Custom prompt textarea for specific modifications
-- AI model selector
-- Payment + execution flow
+## Pricing
 
-Each variation/modification is a new generation that requires its own USDC payment via the X402 payment flow.
+Image generation costs vary by quality tier:
+- **Flash** — ~$0.08, fastest generation, good for quick concepts
+- **Standard** — mid-range quality and price, solid for most uses
+- **Premium** — highest quality and resolution, best for final outputs
+
+Costs are always shown before you confirm, so there are no surprises.
 
 <Info>
-  Image generation costs vary by quality tier. Flash is the cheapest (~$0.08), Premium is the most expensive but produces the highest quality. Costs are shown before you confirm.
+  All costs are displayed upfront before generation. You always know exactly what you're spending before you confirm.
 </Info>

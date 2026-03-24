@@ -1,38 +1,59 @@
 ---
 title: "AI War Room"
-description: "Four agents debate every market. You see the full argument, not just a number."
+description: "4 AI agents debate every market. Watch the reasoning, not just the number."
 ---
 
-# AI War Room
+# The flagship feature
 
-Every prediction market tool shows you a probability. We show you the argument behind it.
+Every prediction market tool gives you a probability. Supermission gives you the **argument**.
 
-The War Room runs four agents on a market. Each one analyzes independently. They disagree. A judge picks the strongest reasoning and produces a final view. You see everything.
+The War Room is where four AI agents independently analyze a market, disagree with each other, and produce a synthesized view — complete with edge calculation, risk flags, and conviction scoring. It's the closest thing to having a trading desk without the overhead.
 
 ## The four agents
 
-**Bull** looks for reasons the YES price should be higher. Catalysts, positive sentiment, underpriced scenarios.
+<CardGroup cols={2}>
+  <Card title="Bull" icon="arrow-up">
+    Finds every reason the market should be higher. Optimistic framing. Looks for catalysts, positive sentiment shifts, underpriced probabilities.
+  </Card>
+  <Card title="Bear" icon="arrow-down">
+    The counterweight. Finds every reason it could go wrong. Risk factors, negative data, overconfidence in consensus.
+  </Card>
+  <Card title="Contrarian" icon="rotate">
+    Asks "what if everyone is wrong?" Looks for crowded trades, false consensus, and scenarios the market isn't pricing.
+  </Card>
+  <Card title="Quant" icon="chart-mixed">
+    Pure data. Historical base rates, volume patterns, orderbook dynamics, time-to-resolution analysis. No narratives, just numbers.
+  </Card>
+</CardGroup>
 
-**Bear** does the opposite. Risk factors, negative data, things the market might be ignoring.
+## How to access it
 
-**Contrarian** asks "what if everyone is wrong?" Crowded trades, false consensus, edge cases nobody is pricing.
+Open any market's detail page and tap the **AI** tab. The War Room loads with the latest analysis for that market.
 
-**Quant** skips the narratives. Volume patterns, historical base rates, orderbook depth, time decay.
+## What you see
 
-## What shows up
+<Accordion title="Edge Calculator">
+  The big number at the top. This is the divergence between the AI's synthesized probability and the current market price. A 15% edge means the AI thinks the market is mispriced by 15 cents. Bigger edge = bigger potential opportunity (and bigger potential for the AI to be wrong).
+</Accordion>
 
-**Edge Calculator.** The gap between what our AI thinks and what the market says. If the AI says 72% and the market says 55%, that's a 17-point edge. Bigger gap means bigger potential opportunity. Also means the AI might just be wrong.
+<Accordion title="Conviction Meter">
+  How much the four agents agree. High conviction = agents largely aligned. Low conviction = significant debate. The meter visualizes this as a spectrum from contested to unanimous.
+</Accordion>
 
-**Conviction Meter.** How much the four agents agree. When all four line up, the meter fills. When they're split, it shows that too.
+<Accordion title="Key Risk">
+  One line. The single biggest risk to the AI's thesis. If you read nothing else, read this. It's the bear case distilled into a sentence.
+</Accordion>
 
-**Key Risk.** One sentence. The single biggest thing that could make this trade go sideways. If you only read one thing in the War Room, read this.
+<Accordion title="Accuracy Scoreboard">
+  Historical hit rate for signals on similar markets. Past performance isn't predictive, but calibration matters. If the AI says 80% confidence and it's been right 78% of the time at that level — that's well-calibrated.
+</Accordion>
 
-**Accuracy Scoreboard.** How often the AI has been right on similar markets. Broken down by category. If it says 80% confidence and historically hits 78% at that level, the calibration is solid.
+## Why this matters
 
-## How to open it
+Every competitor shows you a price. Some show you a chart. None show you the **reasoning**.
 
-Click any market card. In the detail panel, tap the **AI** tab. That's it.
+The War Room makes the AI's thinking transparent. You're not trusting a black box — you're evaluating arguments from four distinct perspectives and deciding for yourself. That's the difference between following a signal and understanding a trade.
 
 <Tip>
-  Pay extra attention when the Contrarian agrees with Bull or Bear. It means even the "what if everyone is wrong" agent couldn't find a counterargument.
+  The Contrarian agent is the most underrated. When it agrees with Bull or Bear, pay attention — it means even the "what if everyone is wrong" perspective couldn't find a counterargument.
 </Tip>

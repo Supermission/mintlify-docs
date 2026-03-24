@@ -1,29 +1,66 @@
 ---
-title: "Your First Trade"
-description: "Walk through placing a trade from start to finish."
+title: "Place Your First Trade"
+description: "From browsing markets to holding a position in under a minute. Here's the exact flow."
 ---
 
-# Your first trade
+# Your first trade — step by step
+
+You've got an account and USDC in your wallet. Time to put a position on. The whole flow takes about 30 seconds once you know what you want to buy.
 
 <Steps>
   <Step title="Browse markets">
-    Open the Markets tab. Scroll through or search for something interesting.
+    The main terminal shows active markets sorted by volume, trending, or category. Use the search bar or filters to find something that interests you — politics, crypto, sports, culture, whatever.
+
+    Or check the **AI Signals** tab for markets where the AI thinks the price is wrong.
   </Step>
-  <Step title="Click a market card">
-    The detail panel opens on the right. You'll see prices, volume, and the probability bars.
+  <Step title="Open a market">
+    Click any market card to see the detail view. You'll see:
+    - Current YES/NO prices
+    - Volume and liquidity
+    - AI signal (if one exists)
+    - Resolution date and source
+    - Recent price history
   </Step>
-  <Step title="Pick a side">
-    Hit YES or NO. The amount picker appears.
+  <Step title="Pick your side">
+    Choose **YES** or **NO**. This is the core decision. If you think the event will happen, buy YES. If you think it won't, buy NO.
+
+    Price tells you the market's implied probability. YES at 65¢ means the market thinks there's a 65% chance.
   </Step>
-  <Step title="Choose how much">
-    Tap a preset ($1, $5, $10, $25, $50, $100) or type a custom amount.
+  <Step title="Enter your amount">
+    Type how much USDC you want to spend. The interface shows you:
+    - **Shares you'll receive** — how many outcome tokens you get
+    - **Average price** — what you're paying per share
+    - **Potential return** — what you get if you're right ($1 per share)
+    - **Potential profit** — return minus your cost
   </Step>
-  <Step title="Review and confirm">
-    You'll see potential profit if correct, potential loss if wrong, and estimated shares. Hit Confirm Trade.
+  <Step title="Confirm the trade">
+    Hit **Confirm**. The trade executes against Polymarket's orderbook. If you're doing a market order, it fills immediately at the best available prices. If you set a limit order, it waits until the market reaches your price.
   </Step>
-  <Step title="Done">
-    Trade executes in a few seconds. Your position shows up in the Portfolio tab.
+  <Step title="Track your position">
+    Your position appears in the **Portfolio** tab. You'll see your entry price, current value, unrealized P&L, and time until resolution. The market card also shows a live position indicator when you hold shares.
   </Step>
 </Steps>
 
-After the trade, three things can happen. The market keeps trading and your position changes value. The market resolves and you win (shares pay $1 each). Or the market resolves and you lose (shares pay $0). You can also sell before resolution at the current market price.
+<Tip>
+  Start with a small trade ($5-10) to get the feel. Markets with high volume and liquidity will have tighter spreads and better fills.
+</Tip>
+
+## What happens after?
+
+Three possible outcomes for your position:
+
+<Accordion title="The market resolves in your favor">
+  Each share pays out $1. If you bought YES at 40¢, you profit 60¢ per share. Head to Portfolio and click **Redeem** to collect your winnings. USDC gets sent back to your wallet.
+</Accordion>
+
+<Accordion title="The market resolves against you">
+  Your shares are worth $0. You lose what you paid. This is the risk — prediction markets are binary. Right or wrong, nothing in between.
+</Accordion>
+
+<Accordion title="You sell before resolution">
+  You can sell your position anytime before the market resolves. If the price moved in your favor, you lock in profit. If it moved against you, you cut your loss. Selling works the same way as buying — instant execution against the orderbook.
+</Accordion>
+
+<Info>
+  Trades on Supermission execute on Polymarket's Central Limit Order Book (CLOB). Same liquidity, same prices. We just made the interface faster.
+</Info>

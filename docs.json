@@ -21,9 +21,9 @@
         "icon": "arrow-up-right-from-square"
       },
       {
-        "anchor": "Discord",
-        "href": "https://discord.gg/6bwN64PW5f",
-        "icon": "discord"
+        "anchor": "Telegram",
+        "href": "https://t.me/supermission",
+        "icon": "paper-plane"
       },
       {
         "anchor": "GitHub",
@@ -50,7 +50,25 @@
             "pages": [
               "getting-started/how-markets-work",
               "getting-started/reading-prices",
-              "getting-started/risk-management"
+              "getting-started/risk-management",
+              "getting-started/glossary"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Markets",
+        "groups": [
+          {
+            "group": "Markets",
+            "pages": [
+              "markets/overview",
+              "markets/browsing-markets",
+              "markets/market-detail",
+              "markets/search-and-filters",
+              "markets/stacked-view",
+              "markets/market-comparison",
+              "markets/market-comments"
             ]
           }
         ]
@@ -61,6 +79,7 @@
           {
             "group": "Executing Trades",
             "pages": [
+              "trading/overview",
               "trading/market-orders",
               "trading/limit-orders",
               "trading/selling-positions",
@@ -71,27 +90,59 @@
             "group": "Managing Positions",
             "pages": [
               "trading/portfolio",
-              "trading/watchlist"
+              "trading/watchlist",
+              "trading/price-alerts",
+              "trading/orderbook"
             ]
           }
         ]
       },
       {
-        "tab": "AI Tools",
+        "tab": "AI Agents",
         "groups": [
           {
-            "group": "Analysis",
+            "group": "AI Agents",
             "pages": [
+              "ai/overview",
               "ai/signals",
+              "ai/signal-feed",
               "ai/war-room",
-              "ai/whale-intelligence"
-            ]
-          },
-          {
-            "group": "Agents",
-            "pages": [
               "ai/oracle-agent",
-              "ai/delphi-agent"
+              "ai/whale-intelligence",
+              "ai/alpha-scanner",
+              "ai/auto-pilot"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "DeFAI",
+        "groups": [
+          {
+            "group": "DeFAI Terminal",
+            "pages": [
+              "defai/overview",
+              "defai/token-analysis",
+              "defai/yield-scanning",
+              "defai/swaps-and-bridges",
+              "defai/wallet-intelligence",
+              "defai/contract-audit",
+              "defai/image-generation"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Dashboard",
+        "groups": [
+          {
+            "group": "Dashboard",
+            "pages": [
+              "dashboard/overview",
+              "dashboard/wallet-portfolio",
+              "dashboard/token-search",
+              "dashboard/defi-positions",
+              "dashboard/yield-strategies"
             ]
           }
         ]
@@ -100,16 +151,19 @@
         "tab": "Platform",
         "groups": [
           {
-            "group": "Features",
+            "group": "Concepts",
             "pages": [
-              "platform/stacked-view",
-              "platform/alerts",
-              "platform/mobile"
+              "concepts/architecture",
+              "concepts/how-ai-works",
+              "concepts/wallet-system",
+              "concepts/polymarket-integration",
+              "concepts/smart-money"
             ]
           },
           {
-            "group": "Trust & Safety",
+            "group": "Platform",
             "pages": [
+              "platform/mobile",
               "platform/security"
             ]
           }
@@ -135,11 +189,15 @@
       {
         "label": "Blog",
         "href": "https://supermission.fun/blog"
+      },
+      {
+        "label": "Twitter",
+        "href": "https://x.com/supaboramern"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Open App",
+      "label": "Launch Terminal",
       "href": "https://supermission.fun/markets"
     }
   },
@@ -147,7 +205,14 @@
     "socials": {
       "x": "https://x.com/supaboramern",
       "github": "https://github.com/Supermission",
-      "discord": "https://discord.gg/6bwN64PW5f"
+      "telegram": "https://t.me/supermission"
     }
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "search": {
+    "prompt": "Search Supermission docs..."
   }
 }

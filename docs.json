@@ -23,140 +23,154 @@
         }
       ]
     },
-    "groups": [
+    "tabs": [
       {
-        "group": "Get started",
-        "pages": [
-          "index",
-          "getting-started/what-is-supermission",
+        "tab": "Documentation",
+        "groups": [
           {
-            "page": "getting-started/how-markets-work",
+            "group": "Get started",
             "pages": [
-              "getting-started/reading-prices",
-              "getting-started/risk-management",
-              "getting-started/glossary"
-            ]
-          },
-          "getting-started/create-account",
-          "getting-started/fund-wallet",
-          "getting-started/first-trade"
-        ]
-      },
-      {
-        "group": "Markets & Trading",
-        "pages": [
-          {
-            "page": "markets/overview",
-            "pages": [
-              "markets/browsing-markets",
-              "markets/market-detail",
-              "markets/search-and-filters",
-              "markets/stacked-view",
-              "markets/market-comparison",
-              "markets/market-comments"
+              "index",
+              "getting-started/what-is-supermission",
+              {
+                "group": "How Markets Work",
+                "pages": [
+                  "getting-started/how-markets-work",
+                  "getting-started/reading-prices",
+                  "getting-started/risk-management",
+                  "getting-started/glossary"
+                ]
+              },
+              "getting-started/create-account",
+              "getting-started/fund-wallet",
+              "getting-started/first-trade"
             ]
           },
           {
-            "page": "trading/overview",
+            "group": "Markets & Trading",
             "pages": [
-              "trading/market-orders",
-              "trading/limit-orders",
-              "trading/selling-positions",
-              "trading/redeeming-wins"
+              {
+                "group": "Markets",
+                "pages": [
+                  "markets/overview",
+                  "markets/browsing-markets",
+                  "markets/market-detail",
+                  "markets/search-and-filters",
+                  "markets/stacked-view",
+                  "markets/market-comparison",
+                  "markets/market-comments"
+                ]
+              },
+              {
+                "group": "Trading",
+                "pages": [
+                  "trading/overview",
+                  "trading/market-orders",
+                  "trading/limit-orders",
+                  "trading/selling-positions",
+                  "trading/redeeming-wins"
+                ]
+              },
+              {
+                "group": "Portfolio",
+                "pages": [
+                  "trading/portfolio",
+                  "trading/watchlist",
+                  "trading/price-alerts",
+                  "trading/orderbook"
+                ]
+              }
             ]
           },
           {
-            "page": "trading/portfolio",
+            "group": "AI Agents",
             "pages": [
-              "trading/watchlist",
-              "trading/price-alerts",
-              "trading/orderbook"
+              "ai/overview",
+              {
+                "group": "Signals",
+                "pages": [
+                  "ai/signals",
+                  "ai/signal-feed",
+                  "ai/war-room"
+                ]
+              },
+              "ai/oracle-agent",
+              "ai/whale-intelligence",
+              {
+                "group": "Alpha Scanner",
+                "pages": [
+                  "ai/alpha-scanner",
+                  "ai/auto-pilot"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "DeFAI Terminal",
+            "pages": [
+              "defai/overview",
+              {
+                "group": "Token Analysis",
+                "pages": [
+                  "defai/token-analysis",
+                  "defai/yield-scanning",
+                  "defai/swaps-and-bridges"
+                ]
+              },
+              "defai/wallet-intelligence",
+              "defai/contract-audit"
+            ]
+          },
+          {
+            "group": "Dashboard",
+            "pages": [
+              "dashboard/overview",
+              "dashboard/wallet-portfolio",
+              "dashboard/token-search",
+              "dashboard/defi-positions",
+              "dashboard/yield-strategies"
+            ]
+          },
+          {
+            "group": "Agent Economy",
+            "pages": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "agent-economy/overview",
+                  "agent-economy/x402",
+                  "agent-economy/erc8004",
+                  "agent-economy/ap2"
+                ]
+              },
+              {
+                "group": "Marketplace",
+                "pages": [
+                  "agent-economy/marketplace",
+                  "agent-economy/collaborate",
+                  "agent-economy/compete",
+                  "agent-economy/compute"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "How It Works",
+            "pages": [
+              "concepts/architecture",
+              "concepts/how-ai-works",
+              "concepts/wallet-system",
+              "concepts/polymarket-integration",
+              "concepts/smart-money"
+            ]
+          },
+          {
+            "group": "Platform",
+            "pages": [
+              "platform/mobile",
+              "platform/security"
             ]
           }
-        ]
-      },
-      {
-        "group": "AI Agents",
-        "pages": [
-          "ai/overview",
-          {
-            "page": "ai/signals",
-            "pages": [
-              "ai/signal-feed",
-              "ai/war-room"
-            ]
-          },
-          "ai/oracle-agent",
-          "ai/whale-intelligence",
-          {
-            "page": "ai/alpha-scanner",
-            "pages": [
-              "ai/auto-pilot"
-            ]
-          }
-        ]
-      },
-      {
-        "group": "DeFAI Terminal",
-        "pages": [
-          "defai/overview",
-          {
-            "page": "defai/token-analysis",
-            "pages": [
-              "defai/yield-scanning",
-              "defai/swaps-and-bridges"
-            ]
-          },
-          "defai/wallet-intelligence",
-          "defai/contract-audit"
-        ]
-      },
-      {
-        "group": "Dashboard",
-        "pages": [
-          "dashboard/overview",
-          "dashboard/wallet-portfolio",
-          "dashboard/token-search",
-          "dashboard/defi-positions",
-          "dashboard/yield-strategies"
-        ]
-      },
-      {
-        "group": "Agent Economy",
-        "pages": [
-          {
-            "page": "agent-economy/overview",
-            "pages": [
-              "agent-economy/x402",
-              "agent-economy/erc8004",
-              "agent-economy/ap2"
-            ]
-          },
-          {
-            "page": "agent-economy/marketplace",
-            "pages": [
-              "agent-economy/collaborate",
-              "agent-economy/compete",
-              "agent-economy/compute"
-            ]
-          }
-        ]
-      },
-      {
-        "group": "How It Works",
-        "pages": [
-          "concepts/architecture",
-          "concepts/how-ai-works",
-          "concepts/wallet-system",
-          "concepts/polymarket-integration",
-          "concepts/smart-money"
-        ]
-      },
-      {
-        "group": "Platform",
-        "pages": [
-          "platform/mobile",
-          "platform/security"
         ]
       }
     ]

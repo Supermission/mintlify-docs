@@ -7,25 +7,40 @@ description: "Send USDC to your wallet on Base. Auto-bridging handles the rest. 
 
 Supermission runs on USDC. Your wallet lives on Base. When you trade, we automatically bridge USDC to Polygon where Polymarket's orderbook lives. You don't need to think about chains.
 
-## Find your wallet address
+<img src="/images/funds.png" alt="Wallet panel showing your USDC balance" />
 
-Your wallet address is in the **top-right corner** of the terminal. Click it to copy the full address. This is a standard Base wallet address — any USDC sent here will show up in your balance.
+## Fund your wallet step by step
 
 <Steps>
+  <Step title="Open the wallet panel">
+    Click the **wallet icon** in the top-right corner of the terminal. This opens the wallet panel where you can see your balance and wallet address.
+  </Step>
   <Step title="Copy your wallet address">
-    Click your wallet in the top-right of the terminal. Copy the address — it starts with `0x`.
+    Click the wallet address (starts with `0x`) to copy it to your clipboard. This is a standard Base wallet address — any USDC sent here will show up in your balance.
   </Step>
-  <Step title="Send USDC on Base">
-    From any exchange or wallet, send **USDC on the Base network** to your address.
+  <Step title="Go to your exchange or wallet">
+    Open the platform you're sending USDC from. Common sources:
+    - **Coinbase** — go to Send/Withdraw, search for USDC
+    - **Binance** — go to Withdraw, search for USDC
+    - **Another wallet** (e.g. MetaMask, Rainbow) — tap Send
+    - **Bridge** — use [Across](https://across.to) to move USDC from Ethereum, Arbitrum, or Optimism to Base
+  </Step>
+  <Step title="Select the Base network">
+    This is the most important step. When choosing the network, make sure you select **Base**. Sending USDC on the wrong network (e.g. Ethereum, Polygon) means your funds won't appear.
+  </Step>
+  <Step title="Paste your wallet address">
+    Paste the `0x` address you copied in Step 2 into the recipient/destination field.
+  </Step>
+  <Step title="Enter the amount and confirm">
+    Enter the amount of USDC you want to send. Double-check the network says **Base** and the address matches, then confirm the transaction.
+  </Step>
+  <Step title="Wait for confirmation">
+    Base transactions confirm in under 10 seconds. Once confirmed, your balance updates automatically in the wallet panel.
 
-    Common sources:
-    - **Coinbase** — withdraw USDC, select Base network
-    - **Binance** — withdraw USDC, select Base network
-    - **Another wallet** — send USDC on Base to your address
-    - **Bridge** — use a bridge like [Across](https://across.to) to move USDC from Ethereum, Arbitrum, or Optimism to Base
+    <img src="/images/add-funds.png" alt="Add funds confirmation" />
   </Step>
-  <Step title="Balance updates automatically">
-    Once the transaction confirms (usually under 10 seconds on Base), your balance appears in the wallet panel. You're ready to trade.
+  <Step title="You're ready to trade">
+    Your USDC is now in your wallet. Head to any market and place a trade — we handle bridging to Polygon automatically.
   </Step>
 </Steps>
 

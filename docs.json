@@ -289,5 +289,6 @@
   },
   "search": {
     "prompt": "Search docs..."
-  }
+  },
+  "maths": false
 }

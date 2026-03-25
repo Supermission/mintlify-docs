@@ -40,20 +40,11 @@
               "getting-started/first-trade",
               "getting-started/beta"
             ]
-          },
-          {
-            "group": "Prediction Markets 101",
-            "pages": [
-              "getting-started/how-markets-work",
-              "getting-started/reading-prices",
-              "getting-started/risk-management",
-              "getting-started/glossary"
-            ]
           }
         ]
       },
       {
-        "tab": "Markets",
+        "tab": "Markets & Trading",
         "groups": [
           {
             "group": "Markets",
@@ -66,29 +57,32 @@
               "markets/market-comparison",
               "markets/market-comments"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Trading",
-        "groups": [
+          },
           {
             "group": "Executing Trades",
             "pages": [
-              "trading/overview",
-              "trading/market-orders",
-              "trading/limit-orders",
-              "trading/selling-positions",
-              "trading/redeeming-wins"
+              {
+                "page": "trading/overview",
+                "pages": [
+                  "trading/market-orders",
+                  "trading/limit-orders",
+                  "trading/selling-positions",
+                  "trading/redeeming-wins"
+                ]
+              }
             ]
           },
           {
             "group": "Managing Positions",
             "pages": [
-              "trading/portfolio",
-              "trading/watchlist",
-              "trading/price-alerts",
-              "trading/orderbook"
+              {
+                "page": "trading/portfolio",
+                "pages": [
+                  "trading/watchlist",
+                  "trading/price-alerts",
+                  "trading/orderbook"
+                ]
+              }
             ]
           }
         ]
@@ -100,13 +94,26 @@
             "group": "AI Agents",
             "pages": [
               "ai/overview",
-              "ai/signals",
-              "ai/signal-feed",
-              "ai/war-room",
+              {
+                "page": "ai/signals",
+                "pages": [
+                  "ai/signal-feed",
+                  "ai/war-room"
+                ]
+              },
               "ai/oracle-agent",
-              "ai/whale-intelligence",
-              "ai/alpha-scanner",
-              "ai/auto-pilot"
+              "ai/whale-intelligence"
+            ]
+          },
+          {
+            "group": "Automation",
+            "pages": [
+              {
+                "page": "ai/alpha-scanner",
+                "pages": [
+                  "ai/auto-pilot"
+                ]
+              }
             ]
           }
         ]
@@ -118,9 +125,13 @@
             "group": "DeFAI Terminal",
             "pages": [
               "defai/overview",
-              "defai/token-analysis",
-              "defai/yield-scanning",
-              "defai/swaps-and-bridges",
+              {
+                "page": "defai/token-analysis",
+                "pages": [
+                  "defai/yield-scanning",
+                  "defai/swaps-and-bridges"
+                ]
+              },
               "defai/wallet-intelligence",
               "defai/contract-audit",
               "defai/image-generation"
@@ -144,8 +155,17 @@
         ]
       },
       {
-        "tab": "Platform",
+        "tab": "Learn",
         "groups": [
+          {
+            "group": "Prediction Markets 101",
+            "pages": [
+              "getting-started/how-markets-work",
+              "getting-started/reading-prices",
+              "getting-started/risk-management",
+              "getting-started/glossary"
+            ]
+          },
           {
             "group": "How It Works",
             "pages": [

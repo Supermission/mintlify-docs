@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
+  "theme": "quill",
   "name": "Supermission",
   "favicon": "/favicon.png",
   "logo": {
@@ -16,11 +16,6 @@
   "navigation": {
     "anchors": [
       {
-        "anchor": "Launch Terminal",
-        "href": "https://supermission.fun/markets",
-        "icon": "arrow-up-right-from-square"
-      },
-      {
         "anchor": "Telegram",
         "href": "https://t.me/supermissionx",
         "icon": "paper-plane"
@@ -28,47 +23,40 @@
     ],
     "tabs": [
       {
-        "tab": "Getting Started",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Get started",
             "pages": [
               "index",
               "getting-started/what-is-supermission",
+              {
+                "page": "getting-started/how-markets-work",
+                "pages": [
+                  "getting-started/reading-prices",
+                  "getting-started/risk-management",
+                  "getting-started/glossary"
+                ]
+              },
               "getting-started/create-account",
               "getting-started/fund-wallet",
               "getting-started/first-trade"
             ]
           },
           {
-            "group": "Prediction Markets 101",
+            "group": "Markets & Trading",
             "pages": [
-              "getting-started/how-markets-work",
-              "getting-started/reading-prices",
-              "getting-started/risk-management",
-              "getting-started/glossary"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Markets & Trading",
-        "groups": [
-          {
-            "group": "Markets",
-            "pages": [
-              "markets/overview",
-              "markets/browsing-markets",
-              "markets/market-detail",
-              "markets/search-and-filters",
-              "markets/stacked-view",
-              "markets/market-comparison",
-              "markets/market-comments"
-            ]
-          },
-          {
-            "group": "Executing Trades",
-            "pages": [
+              {
+                "page": "markets/overview",
+                "pages": [
+                  "markets/browsing-markets",
+                  "markets/market-detail",
+                  "markets/search-and-filters",
+                  "markets/stacked-view",
+                  "markets/market-comparison",
+                  "markets/market-comments"
+                ]
+              },
               {
                 "page": "trading/overview",
                 "pages": [
@@ -77,12 +65,7 @@
                   "trading/selling-positions",
                   "trading/redeeming-wins"
                 ]
-              }
-            ]
-          },
-          {
-            "group": "Managing Positions",
-            "pages": [
+              },
               {
                 "page": "trading/portfolio",
                 "pages": [
@@ -92,12 +75,7 @@
                 ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "tab": "AI Agents",
-        "groups": [
+          },
           {
             "group": "AI Agents",
             "pages": [
@@ -110,12 +88,7 @@
                 ]
               },
               "ai/oracle-agent",
-              "ai/whale-intelligence"
-            ]
-          },
-          {
-            "group": "Automation",
-            "pages": [
+              "ai/whale-intelligence",
               {
                 "page": "ai/alpha-scanner",
                 "pages": [
@@ -123,12 +96,7 @@
                 ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "tab": "DeFAI",
-        "groups": [
+          },
           {
             "group": "DeFAI Terminal",
             "pages": [
@@ -143,12 +111,7 @@
               "defai/wallet-intelligence",
               "defai/contract-audit"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Dashboard",
-        "groups": [
+          },
           {
             "group": "Dashboard",
             "pages": [
@@ -158,35 +121,28 @@
               "dashboard/defi-positions",
               "dashboard/yield-strategies"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Agent Economy",
-        "groups": [
-          {
-            "group": "Protocol",
-            "pages": [
-              "agent-economy/overview",
-              "agent-economy/x402",
-              "agent-economy/erc8004",
-              "agent-economy/ap2"
-            ]
           },
           {
-            "group": "Product",
+            "group": "Agent Economy",
             "pages": [
-              "agent-economy/marketplace",
-              "agent-economy/collaborate",
-              "agent-economy/compete",
-              "agent-economy/compute"
+              {
+                "page": "agent-economy/overview",
+                "pages": [
+                  "agent-economy/x402",
+                  "agent-economy/erc8004",
+                  "agent-economy/ap2"
+                ]
+              },
+              {
+                "page": "agent-economy/marketplace",
+                "pages": [
+                  "agent-economy/collaborate",
+                  "agent-economy/compete",
+                  "agent-economy/compute"
+                ]
+              }
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Learn",
-        "groups": [
+          },
           {
             "group": "How It Works",
             "pages": [
@@ -224,19 +180,14 @@
   "navbar": {
     "links": [
       {
-        "label": "Blog",
-        "href": "https://supermission.fun/blog"
+        "label": "Beta",
+        "href": "https://supermission.fun/markets"
       },
       {
-        "label": "Twitter",
-        "href": "https://x.com/supaboramern"
+        "label": "Changelogs",
+        "href": "https://supermission.fun/blog"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Launch Terminal",
-      "href": "https://supermission.fun/markets"
-    }
+    ]
   },
   "footer": {
     "socials": {

@@ -17,7 +17,7 @@ The Alpha Scanner runs every 30 minutes, comparing the AI's probability estimate
     For each market: `edge = AI probability - market probability`. A 72% AI estimate vs 45% market price = 27% edge.
   </Step>
   <Step title="EV and Kelly computed">
-    Expected value per \$1 bet and Kelly criterion optimal position size are calculated from the edge and odds.
+    Expected value per `$1` bet and Kelly criterion optimal position size are calculated from the edge and odds.
   </Step>
   <Step title="Edges ranked and classified">
     Edges are ranked by conviction, edge size, and EV. Classified as high conviction, moderate, or speculative.
@@ -33,7 +33,7 @@ Each edge card shows:
 | **Edge badge** | "27% EDGE" — color-coded by conviction level |
 | **Market question** | The market being analyzed |
 | **The numbers** | "AI says 72%" vs "Market says 45%" — visual comparison |
-| **EV display** | "+\$0.60 EV per \$1" with Kelly optimal sizing |
+| **EV display** | "+`$0.60` EV per `$1`" with Kelly optimal sizing |
 | **Reasoning summary** | 2-3 sentence thesis (expandable to full reasoning chain) |
 | **Key factors** | Bullet points of supporting evidence |
 | **Agent agreement** | "4/4 agents agree" with confidence bar |
@@ -57,9 +57,9 @@ Each edge card shows:
     ```
 
     Example: AI says 72%, market price 45¢
-    - Cost per share: \$0.45
-    - Payout if right: \$1.00
-    - EV = (0.72 × \$1.00) - (0.28 × \$0.45) = \$0.72 - \$0.126 = **+\$0.594 per share**
+    - Cost per share: `$0.45`
+    - Payout if right: `$1.00`
+    - EV = (0.72 × `$1.00`) - (0.28 × `$0.45`) = `$0.72` - `$0.126` = **+`$0.594` per share**
   </Tab>
   <Tab title="Kelly Criterion">
     ```

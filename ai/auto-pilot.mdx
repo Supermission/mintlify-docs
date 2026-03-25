@@ -15,7 +15,7 @@ Auto-Pilot takes your trading rules — budget, risk tolerance, signal preferenc
 
 <Steps>
   <Step title="Set your budget">
-    Total budget, maximum per trade, and daily loss limit. Presets available: \$50, \$100, \$250, \$500 — or set custom amounts.
+    Total budget, maximum per trade, and daily loss limit. Presets available: `$50,` `$100,` `$250,` `$500` — or set custom amounts.
   </Step>
   <Step title="Configure risk">
     Risk level (Conservative, Moderate, Aggressive), signal sources (Edge Scanner, Smart Money, or both), and maximum concurrent positions.
@@ -54,7 +54,7 @@ Every potential trade passes through these gates:
 |---------|-------------|----------|------------|
 | **Min confidence** | 80 | 70 | 60 |
 | **Min edge** | 25% | 15% | 10% |
-| **Max per trade** | \$25 | \$50 | \$100 |
+| **Max per trade** | `$25` | `$50` | `$100` |
 | **Max concurrent** | 3 | 5 | 10 |
 | **Signal sources** | Edge Scanner only | Edge Scanner + Smart Money | All sources |
 
@@ -66,9 +66,9 @@ Every decision — executed and skipped — is logged with full context:
   <Tab title="Executed Trade">
     ```
     ✅ TRADE EXECUTED
-    Market: "Will BTC reach \$80K by April?"
-    Side: YES @ \$0.31
-    Amount: \$75 (Kelly: 35%, capped at max)
+    Market: "Will BTC reach `$80K` by April?"
+    Side: YES @ `$0.31`
+    Amount: `$75` (Kelly: 35%, capped at max)
     Signal: Edge Scanner (27% edge, 82 confidence)
     Agent agreement: 4/4
     Reasoning: "BTC momentum + institutional inflows..."
@@ -86,8 +86,8 @@ Every decision — executed and skipped — is logged with full context:
   <Tab title="Budget Event">
     ```
     🛑 BUDGET DEPLETED
-    Remaining: \$12.50 (below minimum trade size)
-    Total deployed: \$487.50 across 8 positions
+    Remaining: `$12.50` (below minimum trade size)
+    Total deployed: `$487.50` across 8 positions
     Action: Auto-Pilot paused. Add funds or close positions to resume.
     ```
   </Tab>
@@ -122,7 +122,7 @@ The "Skipped" entries in the audit log are as valuable as the executed trades. T
 - Whether you should adjust thresholds up or down
 
 <Tip>
-  Start conservative. Run Auto-Pilot with a small budget (\$50-100) for a week. Review the audit trail daily. Understand why it traded and why it didn't. Then adjust settings based on what you learn.
+  Start conservative. Run Auto-Pilot with a small budget (`$50-100`) for a week. Review the audit trail daily. Understand why it traded and why it didn't. Then adjust settings based on what you learn.
 </Tip>
 
 <Info>

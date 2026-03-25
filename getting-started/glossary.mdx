@@ -28,7 +28,7 @@ New to crypto, DeFi, or prediction markets? This page explains every term you'll
 </Accordion>
 
 <Accordion title="Resolution">
-  When a prediction market **resolves**, the outcome is determined — did the event happen or not? An oracle verifies the real-world outcome. After resolution:
+  When a prediction market **resolves**, the outcome is determined — did the event happen or not? An oracle (usually the UMA Optimistic Oracle on Polymarket) verifies the real-world outcome. After resolution:
 
   - **Winning shares** → worth $1.00 each (you can redeem them for USDC)
   - **Losing shares** → worth $0.00 (they disappear from your portfolio)
@@ -42,12 +42,12 @@ New to crypto, DeFi, or prediction markets? This page explains every term you'll
   Think of Polymarket as the stock exchange, and Supermission as your Bloomberg Terminal — the powerful interface you use to research and trade on that exchange.
 </Accordion>
 
-<Accordion title="Orderbook">
-  The **orderbook** is the system that matches buyers and sellers.
+<Accordion title="Orderbook / CLOB">
+  **CLOB** stands for Central Limit Order Book. It's the system that matches buyers and sellers.
 
   When you want to buy YES at $0.65, and someone else wants to sell YES at $0.65, the orderbook matches you. It's the same system used by stock exchanges like the NYSE — just applied to prediction markets.
 
-  Supermission trades on Polymarket's orderbook, which has the deepest prediction market liquidity globally.
+  Supermission trades on Polymarket's CLOB, which has the deepest prediction market liquidity globally.
 </Accordion>
 
 <Accordion title="Liquidity">
@@ -78,18 +78,18 @@ New to crypto, DeFi, or prediction markets? This page explains every term you'll
 
 ## Order types
 
-<Accordion title="Instant Order">
-  An **instant order** (also called a market order) buys or sells immediately at the best available price. You click a button, and the trade executes right now.
+<Accordion title="Market Order (FAK)">
+  A **market order** buys or sells immediately at the best available price. You click a button, and the trade executes right now.
 
-  It fills as much as possible at current prices and cancels any leftover amount. You're guaranteed speed but not a specific price.
+  **FAK** stands for **Fill-And-Kill** — it fills as much as possible at current prices and cancels any leftover amount. You're guaranteed speed but not a specific price.
 
   Use when: you want in or out NOW and the market is liquid.
 </Accordion>
 
-<Accordion title="Limit Order">
+<Accordion title="Limit Order (GTC)">
   A **limit order** says "I'll buy/sell at THIS price or better — and I'll wait." Your order sits on the orderbook until someone takes the other side, or you cancel it.
 
-  It stays there indefinitely until filled or cancelled.
+  **GTC** stands for **Good-Till-Cancel** — it stays there indefinitely until filled or cancelled.
 
   Use when: you want a better price than what's currently available and you're patient.
 </Accordion>
@@ -115,7 +115,7 @@ New to crypto, DeFi, or prediction markets? This page explains every term you'll
 <Accordion title="Wallet">
   A **crypto wallet** is like a bank account for cryptocurrency. It has an **address** (like an account number, starts with `0x`) and a **private key** (like a password that proves you own the account).
 
-  On Supermission, you don't need to manage any of this. When you sign up with your email, a **smart wallet** is created for you automatically. No seed phrases, no private key management.
+  On Supermission, you don't need to manage any of this. When you sign up with your email, a **smart wallet** is created for you automatically using Privy's MPC technology. No seed phrases, no private key management.
 </Accordion>
 
 <Accordion title="Smart Wallet">
@@ -125,7 +125,7 @@ New to crypto, DeFi, or prediction markets? This page explains every term you'll
 </Accordion>
 
 <Accordion title="USDC">
-  **USDC** (USD Coin) is a **stablecoin** — a cryptocurrency that's always worth $1.00. It's backed 1:1 by US dollar reserves held by a regulated financial company.
+  **USDC** (USD Coin) is a **stablecoin** — a cryptocurrency that's always worth $1.00. It's backed 1:1 by US dollar reserves held by Circle (a regulated financial company).
 
   All trading on Supermission happens in USDC. When you deposit money, you send USDC. When you win a trade, you receive USDC. It's the dollar of the crypto world.
 </Accordion>
@@ -157,13 +157,21 @@ New to crypto, DeFi, or prediction markets? This page explains every term you'll
 <Accordion title="Non-Custodial">
   **Non-custodial** means you control your money — not Supermission, not anyone else.
 
-  Your wallet's private key is secured using advanced cryptography where no single entity ever has the complete key. We literally cannot access your funds. This is a security feature, not a limitation.
+  Your wallet uses MPC (Multi-Party Computation) technology where the private key is split into pieces. No single entity — not Supermission, not Privy — ever has the complete key. We literally cannot access your funds. This is a security feature, not a limitation.
+</Accordion>
+
+<Accordion title="MPC (Multi-Party Computation)">
+  **MPC** is the technology that makes your wallet both secure AND easy to use.
+
+  Instead of one private key (that you'd have to write down as 24 words and guard with your life), MPC splits the key into multiple pieces held by different parties. To sign a transaction, these pieces work together mathematically — but no single piece is useful alone.
+
+  Result: you login with email, your wallet is secure, and there's no seed phrase to lose.
 </Accordion>
 
 <Accordion title="Seed Phrase / Recovery Phrase">
   A **seed phrase** is a set of 12 or 24 random words that can recover a crypto wallet. Traditional wallets make you write this down and store it safely — if you lose it, you lose your money forever.
 
-  **Supermission doesn't use seed phrases.** Your wallet is recovered through your email/social login. This is a major UX improvement over traditional crypto wallets.
+  **Supermission doesn't use seed phrases.** Your wallet is recovered through your email/social login via Privy's MPC system. This is a major UX improvement over traditional crypto wallets.
 </Accordion>
 
 ---
@@ -187,7 +195,7 @@ New to crypto, DeFi, or prediction markets? This page explains every term you'll
 <Accordion title="Swap">
   A **swap** is exchanging one token for another. Like exchanging dollars for euros, but with crypto tokens.
 
-  Example: swap 100 USDC for ETH on Base. The exchange happens through a decentralized exchange like Uniswap, and Supermission handles the routing to get you the best price.
+  Example: swap 100 USDC for ETH on Base. The exchange happens through a **DEX** (decentralized exchange) like Uniswap, and Supermission handles the routing to get you the best price.
 </Accordion>
 
 <Accordion title="DEX (Decentralized Exchange)">
@@ -318,4 +326,16 @@ New to crypto, DeFi, or prediction markets? This page explains every term you'll
   It balances risk and reward mathematically: bet more when you have a bigger edge, bet less when the edge is small. Supermission's Alpha Scanner calculates Kelly sizing for each edge it finds.
 
   In practice, most traders use "half-Kelly" or "quarter-Kelly" — betting less than the formula suggests — because being wrong about your edge is the real risk.
+</Accordion>
+
+<Accordion title="PWA (Progressive Web App)">
+  A **PWA** is a website that you can install on your phone like a regular app.
+
+  On iOS: open Supermission in Safari → tap the share button → "Add to Home Screen." On Android: Chrome menu → "Install app." You get full-screen mode without browser chrome, and the app feels native.
+</Accordion>
+
+<Accordion title="SSE (Server-Sent Events)">
+  **SSE** is the technology Supermission uses to push real-time price updates to your browser without you refreshing the page.
+
+  Every market card updates its price live because the server continuously sends new prices to your browser. This is why you see prices change in real-time as you browse.
 </Accordion>

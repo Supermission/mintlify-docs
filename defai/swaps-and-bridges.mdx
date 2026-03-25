@@ -1,11 +1,11 @@
 ---
 title: "Swaps & Bridges"
-description: "Swap tokens and bridge assets across 35+ chains through conversation. Optimized routing, inline execution."
+description: "Execute token swaps and cross-chain bridges through conversation. LI.FI routing across 35+ chains with inline execution panels."
 ---
 
 # Swaps and bridges
 
-Ask any DeFAI agent to swap tokens or bridge assets, and it prepares an inline execution panel. Routing is handled automatically, aggregating DEX liquidity across 35+ chains to find you the best price.
+Ask any DeFAI agent to swap tokens or bridge assets, and it prepares an inline execution panel. Routing is handled by **LI.FI**, which aggregates DEX liquidity across 35+ chains to find the optimal path.
 
 ## How to use
 
@@ -17,59 +17,59 @@ Ask any DeFAI agent to swap tokens or bridge assets, and it prepares an inline e
 
 <Steps>
   <Step title="Agent prepares quote">
-    The agent finds the best route, considering slippage, gas costs, and liquidity depth.
+    The agent queries LI.FI for the best route, considering slippage, gas costs, and liquidity depth. The result renders as a **DefiSwapQuotePanel** or **SwapExecuteInline**.
   </Step>
-  <Step title="Quote displays">
-    You see:
-    - **From token and To token** with amounts
-    - **Price impact** percentage
-    - **Gas estimate**
-    - **Route details**
-    - Suggestion chips for follow-up actions
+  <Step title="Quote panel displays">
+    Depending on the response, you see:
+    - **Full quote**: From token → To token with amounts, price impact, gas estimate, route details
+    - **Token price**: Quick price lookup
+    - **Available tokens**: List of tradeable tokens on the selected chain
+    - **Suggestions**: Clickable suggestion chips for follow-up actions
   </Step>
   <Step title="Confirm execution">
-    Review the exact amounts, price impact, gas estimate, and route path. Click **Confirm** to execute.
+    The **SwapExecuteInline** panel shows:
+    - Token icons and symbols for from/to
+    - Exact amounts
+    - Price impact percentage
+    - Gas estimate
+    - Route path
+
+    Click **Confirm** to execute.
   </Step>
   <Step title="Multi-step progress">
     The execution follows these steps:
-    1. **Check** — verify your balance and network
-    2. **Approve** — token approval (if needed, first time only)
+    1. **Check** — verify balance and network
+    2. **Approve** — token approval signature (if needed)
     3. **Execute** — swap transaction
-    4. **Done** — confirmation with transaction link
+    4. **Done** — completion with transaction hash
 
-    Each step shows a checkmark (complete), spinner (in progress), or dimmed (pending).
+    Each step shows a checkmark (complete), spinner (in progress), or dimmed (pending). The transaction hash links to the block explorer.
   </Step>
-  <Step title="Confirmation">
-    On success or failure, the agent sends a confirmation message. Your wallet balances update automatically.
+  <Step title="Feedback message">
+    On success or failure, the agent automatically sends a feedback message to the chat confirming the outcome. Wallet data is refetched to update balances.
   </Step>
 </Steps>
 
 ## Cross-chain bridges
 
-Cross-chain transfers use the same conversational flow with automatic bridging:
+Cross-chain transfers use the same flow but with Circle CCTP or LI.FI bridge routes:
 
-- **USDC transfers** between Base, Ethereum, Polygon, and Arbitrum use automatic bridging — native USDC with no wrapped tokens or intermediaries.
-- **Other tokens** route through aggregated bridge paths across 35+ chains.
+- **Circle CCTP**: USDC transfers between Base ↔ Ethereum ↔ Polygon ↔ Arbitrum. Native USDC bridging with no wrapped tokens.
+- **LI.FI**: Aggregated bridge routes across 35+ chains for any supported token.
 
 The inline panel shows the source chain, destination chain, and estimated transfer time.
 
 ## Supported chains
 
-| Chain | Status |
-|-------|--------|
+| Chain | Network |
+|-------|---------|
 | **Base** | Primary (wallet home) |
-| **Ethereum** | Supported |
-| **Polygon** | Supported |
-| **Arbitrum** | Supported |
-| **Optimism** | Supported |
-| And 30+ more | Supported via aggregated routing |
-
-## Tips for better swaps
-
-- **Check price impact** before confirming large swaps. High impact means you're moving the market against yourself.
-- **Bridge USDC first** if you need tokens on another chain. Swap USDC to your target token on the destination chain for better rates.
-- **Use quotes to compare.** Ask "How much ETH can I get for 1000 USDC?" before committing. The agent shows you the rate without executing.
+| **Ethereum** | Mainnet |
+| **Polygon** | PoS chain |
+| **Arbitrum** | L2 |
+| **Optimism** | L2 |
+| And 30+ more via LI.FI | |
 
 <Tip>
-  For USDC transfers between major chains, automatic bridging is the most efficient route — native USDC with no wrapped intermediaries. The system automatically selects the best path for you.
+  For USDC transfers between major chains, Circle CCTP is the most efficient route — native USDC with no wrapped intermediaries. LI.FI automatically selects the best route, but you can specify "bridge via Circle" if you prefer.
 </Tip>

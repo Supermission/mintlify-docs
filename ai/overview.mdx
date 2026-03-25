@@ -1,17 +1,13 @@
 ---
 title: "AI Agents Overview"
-description: "Four independent AI agents debate every market. You see the reasoning, not just the number."
+description: "Multi-agent intelligence for prediction markets. 4 independent agents debate every market. You see the reasoning, not just the number."
 ---
 
 # AI that shows its work
 
-<Frame>
-  <video autoPlay muted loop playsInline style={{ width: '100%', borderRadius: '12px' }} src="/signals.mp4" />
-</Frame>
-
 Every prediction market tool gives you a probability. Supermission gives you the **argument**.
 
-Our AI system isn't a single model making guesses. It's four independent agents with different analytical perspectives — Bull, Bear, Contrarian, and Quant — that analyze every market, debate the evidence, and produce a synthesized view with full transparency.
+Our AI system isn't a single model making guesses. It's four independent agents with different analytical biases — Bull, Bear, Contrarian, and Quant — that analyze every market, debate the evidence, and produce a synthesized view with full transparency.
 
 ## The philosophy
 
@@ -21,36 +17,36 @@ Our AI system isn't a single model making guesses. It's four independent agents 
 
 | Agent | Role | Analytical bias | Data priorities |
 |-------|------|----------------|-----------------|
-| **Bull** | Finds every reason the market should be higher | Optimistic | Catalysts, positive sentiment shifts, underpriced probabilities, momentum confirmation |
-| **Bear** | Finds every reason it could go wrong | Pessimistic | Risk factors, negative data, overconfidence in consensus, structural headwinds |
+| **Bull** | Narrative and source credibility analysis | Qualitative | Source credibility, political dynamics, institutional incentives, social context |
+| **Bear** | Microstructure and price-in analysis | Structural | Whether news is already priced in, trading volume, liquidity, bid-ask spread dynamics |
 | **Contrarian** | Asks "what if everyone is wrong?" | Skeptical | Crowded trades, false consensus, scenarios the market isn't pricing, regime changes |
-| **Quant** | Pure data, no narratives | Neutral | Historical base rates, volume patterns, orderbook dynamics, time-to-resolution analysis |
+| **Quant** | Base-rate anchoring with statistical rigor | Quantitative | Historical frequency, current market prices vs base rates, time remaining, calibration |
 
-A **Judge** agent synthesizes all four analyses into a final probability and confidence score, weighing argument quality, evidence strength, and historical calibration.
+A **Judge** agent synthesizes all four analyses into a final probability + confidence score, weighing argument quality, evidence strength, and historical calibration.
 
 ## AI features across the terminal
 
 <CardGroup cols={2}>
   <Card title="AI Signals" icon="signal" href="/ai/signals">
-    Real-time alerts when the AI's probability diverges from market price. Three types: Sentiment, Momentum, and Spot Price. Each scored 0-100 for confidence.
+    Real-time alerts when the AI's probability diverges from market price. Three types: Sentiment (research-driven edge), Momentum (price confirms AI), Spot Price (crypto threshold triggers). Confidence-scored 0-100.
   </Card>
   <Card title="Signal Feed" icon="list" href="/ai/signal-feed">
-    Dedicated filterable feed of all active signals. Filter by type, category, and confidence minimum. Sort by confidence, volume, ending soon, or price change.
+    Dedicated filterable feed of all active signals. Filter by type, category, confidence minimum. Sort by confidence, volume, ending soon, or price change. Cursor-based infinite pagination.
   </Card>
   <Card title="AI War Room" icon="users" href="/ai/war-room">
-    The flagship feature. Watch four agents debate a market with Edge Calculator, Conviction Meter, full reasoning cards, Key Risk highlight, and Accuracy Scoreboard.
+    The flagship feature. 4-agent debate with Edge Calculator, Conviction Meter (with audio chime at extreme levels), agent cards with reasoning, Key Doubt from the Contrarian, and Accuracy Scoreboard.
   </Card>
   <Card title="Oracle Agent" icon="message-bot" href="/ai/oracle-agent">
-    Chat-based trading assistant. Search markets, analyze positions, place trades, sell positions, and manage your portfolio — all through natural language.
+    Chat-based trading assistant in the Markets terminal. Search markets, analyze positions, place trades, sell positions, manage portfolio — all through natural language with SSE streaming responses.
   </Card>
   <Card title="Whale Intelligence" icon="fish" href="/ai/whale-intelligence">
-    Top 20 holders per market with position sizes, outcome badges, and aggregate whale sentiment. See where the big money is leaning.
+    Top 20 holders per market with position sizes, outcome badges, and aggregate whale sentiment. Surfaces "Smart money leans YES/NO" when whale positions lean 55%+ in one direction.
   </Card>
   <Card title="Alpha Scanner" icon="crosshairs" href="/ai/alpha-scanner">
-    Automated edge detection running every 30 minutes. Compares AI probability vs market price, calculates expected value and optimal sizing, and classifies edges by conviction level.
+    Automated edge detection running every 30 minutes. Compares AI probability vs market price, calculates EV and Kelly criterion sizing, classifies edges as high conviction / moderate / speculative.
   </Card>
   <Card title="Auto-Pilot" icon="robot" href="/ai/auto-pilot">
-    Autonomous trade execution. Set your budget, risk tolerance, and signal preferences. The system trades when high-conviction opportunities appear — with a full audit trail for every decision.
+    Autonomous trade execution. Set budget, risk tolerance, and signal preferences. The system executes when high-conviction opportunities appear. Full audit trail for every decision (including skips).
   </Card>
 </CardGroup>
 
@@ -63,10 +59,10 @@ The strongest trade setups combine multiple AI layers:
     The multi-agent system finds a meaningful divergence between its probability and the market price. Confidence score is 70+ and agents largely agree.
   </Step>
   <Step title="War Room confirms">
-    Edge Calculator shows significant mispricing. Conviction Meter is high (70%+). Three or four out of four agents are aligned.
+    Edge Calculator shows significant mispricing. Conviction Meter is high (70%+). Agent Debate Panel shows 3/4 or 4/4 agents aligned.
   </Step>
   <Step title="Whales align">
-    Top Holders panel shows large positions leaning in the same direction as the AI's thesis. Smart money sentiment crosses the 55% threshold.
+    Top Holders panel shows large positions leaning in the same direction as the AI's thesis. Smart money sentiment crosses 55% threshold.
   </Step>
   <Step title="Execute with confidence">
     When all three layers agree — AI signal + War Room conviction + whale alignment — that's as close to a high-probability trade as prediction markets offer.
@@ -79,7 +75,7 @@ Not all markets get the same AI treatment. Analysis depth scales with market imp
 
 | Tier | Criteria | Analysis | Update frequency |
 |------|----------|----------|------------------|
-| **Tier 1** | Trending or volume > $50K | Full 4-agent debate with judge synthesis | Every 15 minutes |
+| **Tier 1** | Trending OR volume > $50K | Full 4-agent debate with judge synthesis | Every 15 minutes |
 | **Tier 2** | Volume > $5K | 2-agent quick analysis (Bull + Bear) | Every 30 minutes |
 | **Tier 3** | Everything else | Single-model sentiment only | Every 60 minutes |
 

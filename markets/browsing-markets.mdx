@@ -1,93 +1,95 @@
 ---
 title: "Browsing Markets"
-description: "Scan for opportunities, understand what every number on a market card means, and trade without leaving the page."
+description: "How market cards work, what every number means, inline trading flow, and the visual signals you should pay attention to."
 ---
 
 # Browsing markets
 
-The Browse tab is your starting point. Every active market on Polymarket is displayed as a card in a scrollable grid. Here's what each element means and how to use it.
+The Browse tab is where you scan for opportunities. Every market on Polymarket with active trading is displayed as a card in a responsive grid. Here's what every element means and how to interact with it.
 
-## What's on a market card
+## Anatomy of a market card
 
-Each card gives you a quick snapshot of a market so you can decide whether to dig deeper.
+Each card packs a lot of information into a compact format:
 
-### Header
+### Header section
 
-| Element | What it tells you |
-|---------|-------------------|
-| **Market icon** | The category — politics, crypto, sports, etc. |
-| **Question** | The core question being traded on. Truncated on the card; full text in the detail panel. |
-| **AI Pick badge** | Shows when our AI has a view. **Green** = AI favors Yes, **Red** = AI favors No, **Gray** = neutral. |
-| **Asset tag** | If the market tracks a specific asset (like BTC or ETH), you'll see a small badge. |
-| **Timeframe tag** | Shows the market's timeframe category, if applicable. |
+| Element | Description |
+|---------|-------------|
+| **Market icon** | Category-specific icon (politics, crypto, sports, etc.) |
+| **Question text** | The market question, truncated to 2 lines. Full text visible in the detail panel. |
+| **AI Pick badge** | Appears at the top center when the AI has a signal. **Emerald** = bullish (AI favors YES), **Rose** = bearish (AI favors NO), **Gray** = neutral. |
+| **Asset tag** | If the market references a specific asset (e.g., "BTC", "ETH"), shown as a small badge. |
+| **Timeframe tag** | If the market has a known timeframe category. |
 
-### Key stats
+### Stats section
 
-| Element | What it tells you |
-|---------|-------------------|
-| **Category badges** | One or more labels like Politics, Crypto, or Sports. |
-| **Trending tag** | An orange badge that appears when the market is seeing unusual activity. |
-| **Volume** | Total USDC ever traded. Higher volume means better prices and easier fills. |
-| **24h Volume** | USDC traded in the last 24 hours. Tells you how active the market is right now. |
-| **Countdown** | Time until the market resolves. **Red** = less than 1 hour, **Amber** = less than 24 hours, **Gray** = more than 24 hours. Resolved markets show "Ended". |
+| Element | Description |
+|---------|-------------|
+| **Category badges** | One or more category labels (Politics, Crypto, Sports, etc.) |
+| **Trending tag** | Orange "Trending" or "Hot" badge if the market has above-average volume spikes. |
+| **Volume** | Total lifetime USDC traded in this market. Higher = more liquid, better price discovery. |
+| **24h Volume** | USDC traded in the last 24 hours. Shows how active the market is right now. |
+| **Countdown** | Time until resolution. Color-coded: **Red** = less than 1 hour, **Amber** = less than 24 hours, **Gray** = more than 24 hours. Ended markets show "Ended". |
 
-### Prices and actions
+### Price section
 
-| Element | What it tells you |
-|---------|-------------------|
-| **Probability bars** | Green and red bars showing the Yes and No percentages. Wider bar = higher probability. |
-| **Yes / No buttons** | Show the current price in cents. Click either one to start trading. |
-| **Bookmark icon** | Save the market to your [Watchlist](/trading/watchlist). Filled icon = already saved. |
+| Element | Description |
+|---------|-------------|
+| **Probability bars** | Two horizontal bars showing YES and NO percentages. Green for YES, red for NO. The wider the bar, the higher the probability. |
+| **Outcome buttons** | Two buttons — **YES** (green tint) and **NO** (red tint) — each showing the current price in cents. Clicking either opens the inline trading flow. |
+| **Bookmark icon** | Click to add/remove from your [Watchlist](/trading/watchlist). Filled = watched, outlined = not watched. |
 
-### Visual cues
+### Card styling
 
-The card's left border tells you the AI's stance at a glance:
-- **Green border** — AI favors Yes
-- **Red border** — AI favors No
-- **No colored border** — No AI signal
+The card's left border color indicates the AI's stance:
+- **Green border** — AI favors YES (bullish)
+- **Red border** — AI favors NO (bearish)
+- **No special border** — No AI signal or neutral
 
-When you're actively trading from a card, it highlights with an amber border so you can keep track of where you are.
+On hover, the card lifts slightly with a shadow. During active trading (when you've clicked an outcome button), the card gets an amber border with a pulse animation.
 
-## Trading directly from a card
+## Inline trading flow
 
-You don't need to open the detail panel to place a trade. You can do it right from the card.
+You can trade directly from any market card without opening the detail panel:
 
 <Steps>
-  <Step title="Pick a side">
-    Click **Yes** or **No** on any card. An amount picker slides in below the card. Only one card can be in trading mode at a time.
+  <Step title="Click an outcome button">
+    Click **YES** or **NO** on any card. The button highlights and an amount picker slides in below the card. Only one card can be in trading mode at a time — clicking another card closes the current one.
   </Step>
-  <Step title="Choose your amount">
-    Use the quick presets — **$1, $5, $10, $25, $50, $100** — or type a custom amount. You'll instantly see:
-    - How many shares you'll get
-    - Your average price per share
-    - Your potential payout if you're right ($1 per share)
-    - Your potential profit (payout minus cost)
+  <Step title="Select your amount">
+    Quick presets: **$1, $5, $10, $25, $50, $100**. Or type a custom amount. The interface instantly shows:
+    - Number of shares you'll receive
+    - Average price per share
+    - Potential return if you're right ($1 per share)
+    - Potential profit (return minus cost)
   </Step>
-  <Step title="Confirm">
-    A summary panel appears. Review the details and click **Confirm** to execute. Your order fills instantly at the best available prices.
+  <Step title="Confirm the trade">
+    A confirmation panel slides in showing the full trade summary. Click **Confirm** to execute. The trade hits Polymarket's CLOB as a FAK (Fill-And-Kill) order.
   </Step>
-  <Step title="You're in">
-    Your new position shows up immediately in the Portfolio tab. No waiting around for confirmations.
+  <Step title="Position created">
+    Your position appears immediately in the Portfolio tab via optimistic updates — you don't need to wait for the blockchain to confirm. The optimistic entry auto-cleans when the real position data arrives from Polymarket's API.
   </Step>
 </Steps>
 
-## Grid layouts
+## Grid modes
 
-You can switch between two layouts using the toggle in the sidebar:
+Toggle between two views using the switch in the category sidebar:
 
 <Tabs>
   <Tab title="Normal View (Grid)">
-    Every market gets its own card in a flat grid. One column on mobile, two on tablet, three on desktop. Best for scanning broadly across all markets.
+    Flat grid layout. Every market is its own card. 1 column on mobile, 2 on tablet, 3 on desktop. Best for scanning broadly and spotting new opportunities. This is the default.
   </Tab>
   <Tab title="Stacked View (Events)">
-    Related markets are grouped under their parent event. For example, an election event with 10+ sub-markets collapses into a single card showing the event title and market count. Click to expand and see all sub-markets. Great for comparing related outcomes. See [Stacked View](/markets/stacked-view) for details.
+    Markets grouped by parent event using `event_id`. Multi-market events (e.g., "2024 Election" with 10+ sub-markets) collapse into a single **EventStackCard** showing the event title and count of sub-markets. Click to expand into an accordion of sub-markets. Single-market events render as normal cards.
+
+    Uses the same virtualization as normal view — handles thousands of events efficiently. See [Stacked View](/markets/stacked-view) for full details.
   </Tab>
 </Tabs>
 
-## Scrolling and loading
+## Pagination
 
-Markets load in batches of 50 with infinite scroll. As you approach the bottom, the next batch loads automatically. No buttons to click — just keep scrolling.
+Markets load in pages of 50 using infinite scroll. As you scroll within 3 rows of the bottom, the next page loads automatically. The total market count is shown and updates as filters change. There is no "Load More" button — it's seamless.
 
 <Tip>
-  The best workflow: filter by category, sort by volume or trending, scan the AI Pick badges for strong signals, then open the detail panel on anything interesting. Always check the orderbook depth, price chart, and AI War Room analysis before placing larger trades.
+  The most efficient workflow: filter by category, sort by volume or trending, scan the AI Pick badges for markets where the AI has a strong signal, and open the detail panel on anything interesting. Don't trade from the card alone — always check the detail panel for orderbook depth, price chart, and War Room analysis before sizing up.
 </Tip>

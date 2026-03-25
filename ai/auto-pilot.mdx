@@ -27,11 +27,11 @@ Auto-Pilot takes your trading rules — budget, risk tolerance, signal preferenc
 
 ## How it executes
 
-The Auto-Pilot system checks for opportunities every 5 minutes:
+The Auto-Pilot worker runs every 5 minutes:
 
 1. **Check for qualifying signals** — edges from Alpha Scanner and/or smart money moves
 2. **Apply risk filters** — budget, loss limit, position count, confidence threshold
-3. **Size the position** — optimal sizing capped by your max-per-trade setting
+3. **Size the position** — Kelly criterion capped by max-per-trade setting
 4. **Execute or skip** — trade if all checks pass, log the decision either way
 
 ## Risk manager checks
@@ -42,11 +42,11 @@ Every potential trade passes through these gates:
 |-------|--------------|
 | **Budget remaining** | Enough capital left for this trade? |
 | **Daily loss limit** | Have daily losses hit the ceiling? |
-| **Position sizing** | Optimal size capped by max-per-trade |
+| **Position sizing** | Kelly capped by max-per-trade |
 | **Concurrent positions** | At the position limit? |
-| **Correlation check** | Too many bets on the same event or topic? |
-| **Confidence threshold** | Meets your minimum confidence? |
-| **Edge threshold** | Meets your minimum edge %? |
+| **Correlation check** | Too many bets on the same event/topic? |
+| **Confidence threshold** | Meets user's minimum confidence? |
+| **Edge threshold** | Meets user's minimum edge %? |
 
 ## Configuration options
 
@@ -65,10 +65,10 @@ Every decision — executed and skipped — is logged with full context:
 <Tabs>
   <Tab title="Executed Trade">
     ```
-    TRADE EXECUTED
+    ✅ TRADE EXECUTED
     Market: "Will BTC reach $80K by April?"
     Side: YES @ $0.31
-    Amount: $75 (capped at max)
+    Amount: $75 (Kelly: 35%, capped at max)
     Signal: Edge Scanner (27% edge, 82 confidence)
     Agent agreement: 4/4
     Reasoning: "BTC momentum + institutional inflows..."
@@ -76,7 +76,7 @@ Every decision — executed and skipped — is logged with full context:
   </Tab>
   <Tab title="Skipped Trade">
     ```
-    TRADE SKIPPED
+    ⏭️ TRADE SKIPPED
     Market: "Democrats win popular vote"
     Reason: "Only 2/4 agents agree (minimum: 3)"
     Signal: Edge Scanner (18% edge, 58 confidence)
@@ -85,7 +85,7 @@ Every decision — executed and skipped — is logged with full context:
   </Tab>
   <Tab title="Budget Event">
     ```
-    BUDGET DEPLETED
+    🛑 BUDGET DEPLETED
     Remaining: $12.50 (below minimum trade size)
     Total deployed: $487.50 across 8 positions
     Action: Auto-Pilot paused. Add funds or close positions to resume.

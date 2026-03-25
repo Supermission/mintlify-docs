@@ -1,59 +1,50 @@
 ---
 title: "Stacked View"
-description: "Group related markets by event so you can compare sub-markets, spot mispricings, and trade related outcomes from one place."
+description: "Group related sub-markets by event. Compare 'Democrats win Senate' vs 'Democrats win popular vote' in one expandable card."
 ---
 
 # Stacked view
 
-Some events have one market. Others have a dozen. A major election might have markets on the overall winner, the popular vote, individual swing states, Senate control, and more — all related, all tradeable separately.
+Some events have one market. Others have ten. The 2024 election had markets on winner, popular vote, swing states, Senate control, and more — all related, all tradeable separately.
 
-Stacked View groups these related markets under a single expandable card so you can see every angle at once.
+Stacked View groups these sub-markets under a single expandable **EventStackCard** so you can see all the angles at once.
 
-## How to turn it on
+## How to enable
 
-In the sidebar, toggle the view mode from **Normal** to **Stacked**. The grid reorganizes instantly. Toggle back anytime to return to the flat layout.
+In the category sidebar, toggle the view mode from **Normal** to **Stacked**. The market grid reorganizes instantly. Toggle back to return to the flat grid.
 
-## What you'll see
+## How it works
 
 <Steps>
-  <Step title="Events replace individual cards">
-    When multiple markets belong to the same event, they collapse into a single event card. The card shows the event title, how many sub-markets are inside, the combined trading volume, and a price preview from the most active sub-market.
+  <Step title="Markets grouped by event_id">
+    Polymarket assigns an `event_id` to related markets. Supermission's worker API pre-groups markets by this ID. The `useGroupedMarkets` hook provides the grouped data to the UI.
+  </Step>
+  <Step title="EventStackCard rendering">
+    Events with 2+ sub-markets render as an **EventStackCard** — a single card showing:
+    - Event title
+    - Number of sub-markets (badge)
+    - Aggregate volume across all sub-markets
+    - Price preview from the highest-volume sub-market
   </Step>
   <Step title="Click to expand">
-    Click any event card to open it up. All sub-markets appear in a list with their own prices, volumes, countdowns, and trade buttons. Click any sub-market to open its full detail panel.
+    Click an event card to expand the accordion. All sub-markets appear as a nested list with individual prices, volumes, countdown timers, and trade buttons. Each sub-market is clickable to open the full detail panel.
   </Step>
-  <Step title="Single-market events stay as cards">
-    If an event only has one market, it looks and works exactly like a normal card. No extra clicks needed.
+  <Step title="Single-market events">
+    Events with only one market render as normal MarketCards — no wrapping, no accordion. You won't notice these are any different from the normal grid.
   </Step>
 </Steps>
 
-## Why it matters
+## Performance
 
-Stacked View isn't just a cosmetic change. It gives you a real analytical edge.
+Stacked View uses the same `@tanstack/react-virtual` virtualization as Normal View. Only visible event cards and their expanded sub-markets are rendered in the DOM. Infinite scroll pagination works identically — more events load as you scroll near the bottom.
 
-### Spot mispricings between related markets
-
-When you can see "Democrats win Senate" at 60% next to "Democrats win popular vote" at 45%, you can ask whether those numbers make sense together. If they don't, one of those markets might be mispriced — and that's an opportunity.
-
-### Build correlated positions
-
-Want to bet on multiple outcomes within the same event? Stacked View lets you see all your options in one place so you can build a position across related markets without hunting for each one individually.
-
-### Track complex events
-
-Major events like elections, Fed meetings, or big crypto catalysts often spawn many related markets. Stacked View keeps them organized so you don't miss a sub-market buried in the grid.
-
-## When to use each view
+## When to use Stacked vs Normal
 
 | View | Best for |
 |------|----------|
-| **Normal** | Scanning broadly, discovering new markets across categories, quick trades |
-| **Stacked** | Researching a specific event, comparing related outcomes, building multi-market positions, finding mispricings |
-
-## Scrolling works the same
-
-The grid still loads in batches as you scroll. Whether you're in Normal or Stacked View, more markets appear automatically as you reach the bottom.
+| **Normal** | Scanning broadly, comparing unrelated markets, looking for new opportunities across categories |
+| **Stacked** | Researching a specific event, comparing related outcomes, building correlated positions, spotting mispricings between sub-markets |
 
 <Tip>
-  Correlated markets are where experienced traders find edge. If two outcomes should be linked but their prices disagree, one of them is likely wrong. Stacked View makes these comparisons effortless.
+  Correlated markets are where smart traders find mispricings. If "Democrats win Senate" is at 60% but "Democrats win popular vote" is at 45%, something might be off. Stacked View makes these comparisons effortless.
 </Tip>

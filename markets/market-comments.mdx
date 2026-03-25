@@ -1,60 +1,32 @@
 ---
 title: "Market Comments"
-description: "Read community discussion on any market to see what other traders are thinking, debating, and flagging."
+description: "Community discussion threads on each market. See what other traders are thinking."
 ---
 
 # Market comments
 
-Every market has a comments section where traders share their analysis, debate outcomes, and flag new information. It's one of the fastest ways to get a pulse on what the community thinks.
+Each market has a comments section in the detail panel. This is where the community discusses the market — sharing analysis, debating outcomes, and flagging new information.
 
-## Where to find them
+## What you see
 
-Comments appear inside the market detail panel, below the orderbook and price chart. Open any market card and scroll down to see the discussion.
-
-## What you'll see
-
-Each comment shows:
+Comments are rendered as **threaded discussions**:
 
 | Element | Description |
 |---------|-------------|
-| **Author** | The trader's username or a shortened version of their wallet address |
-| **Timestamp** | When the comment was posted, shown as relative time ("2 hours ago", "3 days ago") |
-| **Comment text** | The trader's message |
-| **Likes** | How many other traders found the comment useful |
-| **Replies** | Threaded replies nested under the parent comment |
+| **Author** | Wallet address (truncated to first 6 and last 4 characters) |
+| **Timestamp** | Relative time ("2 hours ago", "3 days ago") |
+| **Content** | The comment text |
+| **Likes** | Like count for the comment |
+| **Replies** | Nested reply threads, indented under the parent comment |
 
-Comments are sorted so the most relevant discussion surfaces first. Reply threads are indented so you can follow conversations easily.
+## How it works
 
-## How to use comments effectively
+The `useMarketComments` hook fetches comments for the current market's `condition_id`. Comments load when the detail panel opens and display below the orderbook and price chart sections.
 
-### Gauge community sentiment
+## Loading states
 
-Before placing a trade, skim the comments to see which way the crowd is leaning. If everyone is bullish, consider whether that consensus is already priced in — or if there's a contrarian opportunity.
-
-### Find information you missed
-
-Other traders often spot news articles, data points, or developments that you might not have seen. Comments can surface information faster than waiting for the AI signals to update.
-
-### Understand the bear case
-
-Look for the most-liked comments arguing against the consensus. These often highlight risks and edge cases that are easy to overlook when you're excited about a trade.
-
-### Track sentiment shifts
-
-Check comments at different times. If the tone shifts from bullish to cautious (or vice versa), it could signal a price move before it shows up in the chart.
-
-## Keep in mind
-
-Comments are written by other traders and are not moderated for accuracy. People have biases, positions, and sometimes bad information. A few ground rules:
-
-- **Don't trade based on a single comment.** Use comments as one input alongside the AI analysis, orderbook data, and your own research.
-- **Watch for position bias.** Traders holding large Yes positions have an incentive to post bullish comments. The same goes for No holders.
-- **Verify claims independently.** If someone cites a news article or data point, check the source yourself before acting on it.
+While comments load, animated skeleton placeholders with shimmer effects appear. If no comments exist, an empty state message is shown.
 
 <Info>
-  Comments are community-generated and unmoderated. They may contain opinions, speculation, or inaccurate information. Always do your own research before trading.
+  Comments are community-generated and unmoderated. They may contain opinions, speculation, or misinformation. Always verify claims independently — especially before trading based on another trader's analysis.
 </Info>
-
-<Tip>
-  The most valuable comments are often the ones that disagree with the current price. If a market is at 80% Yes and someone makes a well-reasoned case for No, that's worth reading carefully — even if you end up disagreeing.
-</Tip>

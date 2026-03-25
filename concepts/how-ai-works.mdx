@@ -1,91 +1,117 @@
 ---
-title: "How Our AI Finds Opportunities"
-description: "Four AI agents debate every market. A judge picks the winner. You see the full reasoning. Here's how it works."
+title: "How the AI Works"
+description: "The multi-agent debate system behind Supermission's signals. 4 agents, 1 judge, full transparency."
 ---
 
-# How our AI finds opportunities
+# Multi-agent intelligence
 
-Supermission doesn't use a single AI model to predict market outcomes. That would be too easy to fool and too narrow in perspective.
+Supermission doesn't use a single model to predict market outcomes. It runs a structured debate between four AI agents with distinct analytical perspectives, then synthesizes the debate into actionable intelligence.
 
-Instead, we run a **structured debate** between four AI agents — each with a completely different job. They argue. A judge synthesizes their best arguments. And you see everything: the reasoning, the disagreements, the confidence level.
+This is the core engine behind [Signals](/ai/signals), [War Room](/ai/war-room), and [Alpha Scanner](/ai/alpha-scanner).
 
-This is the engine behind [Signals](/ai/signals), [War Room](/ai/war-room), and [Alpha Scanner](/ai/alpha-scanner).
-
-## The four agents
+## The agents
 
 <CardGroup cols={2}>
   <Card title="Bull Agent" icon="arrow-up">
-    **Job:** Find every reason the market should be higher.
+    **Mandate:** Narrative and source credibility analysis.
 
-    Looks for catalysts, positive sentiment shifts, underpriced probabilities, momentum confirmation, and institutional interest.
+    Evaluates: source credibility, political dynamics, institutional incentives, social context, and qualitative signals that shape market narratives.
   </Card>
   <Card title="Bear Agent" icon="arrow-down">
-    **Job:** Find every reason it could go wrong.
+    **Mandate:** Microstructure and price-in analysis.
 
-    Looks for risk factors, negative data, overconfidence in consensus, structural headwinds, and historical patterns that suggest lower probability.
+    Evaluates: whether new information is already priced in, trading volume patterns, liquidity depth, bid-ask spread dynamics, and market efficiency.
   </Card>
   <Card title="Contrarian Agent" icon="rotate">
-    **Job:** Ask "what if everyone is wrong?"
+    **Mandate:** Ask "what if everyone is wrong?"
 
-    Looks for crowded trades, false consensus, scenarios the market isn't pricing, regime changes, and black swan potential.
+    Looks for: crowded trades, false consensus, scenarios the market isn't pricing, regime changes, black swan potential.
   </Card>
   <Card title="Quant Agent" icon="chart-mixed">
-    **Job:** Pure data, no narratives.
+    **Mandate:** Base-rate anchoring with statistical rigor.
 
-    Looks at historical base rates, volume patterns, orderbook dynamics, time-to-resolution analysis, price velocity, and liquidity depth.
+    Anchors on: historical frequency of similar events, current market prices relative to base rates, time remaining to resolution, and calibration against prior outcomes.
   </Card>
 </CardGroup>
 
-## How they work together
+## The pipeline
 
 <Steps>
   <Step title="Data collection">
-    Every agent gets the same starting information: current market price, trading volume, orderbook depth, resolution date, and category. Then each agent independently pulls from their own sources — news, social media sentiment, historical patterns, and price data.
+    Each agent receives the same market data: current price, volume, orderbook depth, resolution date, and category. Additionally, each agent pulls from external sources — news feeds, social sentiment (X, Reddit), on-chain data, and historical patterns for similar markets.
   </Step>
   <Step title="Independent analysis">
-    Each agent works alone. They don't see each other's work. Each produces a probability estimate (0-100%), a confidence level, key evidence supporting their view, and the biggest doubt that could prove them wrong.
+    Agents analyze independently. They don't see each other's work. Each produces:
+    - A probability estimate (0-100%)
+    - Confidence level (how sure they are of their own estimate)
+    - Key evidence (sourced claims)
+    - Key doubt (what could make them wrong)
   </Step>
   <Step title="Judge synthesis">
-    A judge agent reviews all four analyses and produces a final verdict: a synthesized probability, confidence score, the single biggest risk, and how many agents agree with each other.
+    A judge agent reviews all four analyses and produces:
+    - **Final probability** — weighted synthesis of all four estimates
+    - **Confidence score** (0-100) — based on agent agreement and evidence quality
+    - **Key risk** — the single biggest threat to the thesis
+    - **Agreement ratio** — how many agents lean the same direction
   </Step>
-  <Step title="Signal fires">
-    If the AI's probability diverges meaningfully from the market price — that's a signal. You see it in your feed with the full reasoning chain attached, so you can decide for yourself.
+  <Step title="Signal emission">
+    If the synthesized probability diverges meaningfully from market price, a signal fires with the full reasoning chain attached.
   </Step>
 </Steps>
 
-## Understanding confidence scores
+## Confidence scoring
 
-| Score | What it means | Agent Agreement |
-|-------|--------------|----------------|
-| **80-100** | High conviction — the agents largely agree and have strong evidence | 3 or 4 out of 4 aligned |
-| **60-79** | Moderate conviction — meaningful debate between agents | 2 out of 4 aligned |
-| **40-59** | Low conviction — proceed with caution | Agents are split |
+| Score | Agent Agreement | Evidence Quality | Meaning |
+|-------|----------------|-----------------|---------|
+| **80-100** | 4/4 or 3/4 aligned | Strong, multi-source | High conviction — agents largely agree |
+| **60-79** | 2/4 aligned | Moderate, some gaps | Moderate conviction — meaningful debate |
+| **40-59** | Split or 1/4 | Weak or conflicting | Low conviction — proceed with caution |
 
 ## Conviction levels
 
-The War Room classifies every analysis into one of four levels:
+The War Room classifies conviction based on agent agreement:
 
-- **Extreme** — All 4 agents agree with high confidence. You'll get an alert with a sound notification.
-- **High** — 3 out of 4 agents agree. Strong directional signal.
-- **Moderate** — 2 out of 4 agree. Evidence on both sides.
-- **Contested** — Agents are split evenly. The market is genuinely uncertain.
+- **Extreme** — All 4 agents agree at 80%+ confidence. Triggers real-time SSE alerts with sound notification.
+- **High** — 3/4 agents agree. Strong directional signal.
+- **Moderate** — 2/4 agents agree. Some evidence on both sides.
+- **Contested** — Agents split evenly. Market is genuinely uncertain.
 
-## How often markets get analyzed
+## Analysis tiers
 
-High-profile markets (trending or high-volume) get the full 4-agent debate frequently. Lower-volume markets get lighter analysis less often. When breaking news hits a market, it gets re-analyzed immediately regardless of schedule.
+AI resources are allocated based on market importance:
 
-## Sports markets work differently
+| Tier | Criteria | Treatment | Frequency |
+|------|----------|-----------|-----------|
+| **Tier 1** | Trending OR volume > $50K | Full 4-agent debate + judge | Every 15 min |
+| **Tier 2** | Volume > $5K | 2-agent analysis (Bull + Bear) | Every 30 min |
+| **Tier 3** | Everything else | Single-model sentiment | Every 60 min |
 
-Traditional news and sentiment analysis doesn't work well for sports — outcomes depend on live performance, not information edges. For sports markets, we use specialized price-movement detection that watches for:
+Markets also get **event-driven** re-analysis when matched news arrives, regardless of tier.
 
-- **Sharp moves** — sudden price swings that suggest informed betting
-- **Volume spikes** — unusual activity that signals something is happening
-- **Spread compression** — when the gap between buy and sell prices narrows sharply
-- **Late action** — significant price movement close to game time
+## Sports-specific intelligence
+
+Traditional news/sentiment analysis fails for sports (28-37% hit rate). Sports outcomes depend on **live performance**, not information edges. Supermission uses a price-movement detection engine for sports markets:
+
+| Algorithm | Signal | Confidence |
+|-----------|--------|------------|
+| **Steam** | Price moves 8%+ in 5-15 min | 60-85 |
+| **RLM Proxy** | Tick frequency spike + opposing price | 70 |
+| **Spread Compression** | Bid-ask spread < 50% of 30-min avg | 65 |
+| **Late Sharp** | Price move 5%+ within 2h of event start | 75 |
 
 <Info>
-  The AI system improves over time. After each market resolves, we score the prediction and feed the result back into the system. Better calibration, better signals.
+  The AI system is calibrated against historical outcomes. After each market resolves, the prediction is scored and fed into the accuracy tracking system. This creates a feedback loop that improves calibration over time.
 </Info>
+
+## LLM infrastructure
+
+| Component | Provider | Purpose |
+|-----------|----------|---------|
+| **Market Analysis LLM** | MiniMax M2.7 | Multi-agent debate and judge synthesis |
+| **Chat Agents LLM** | OpenRouter (GPT-4O-mini) | Oracle, Delphi, and Securo chat agents |
+| **Vision** | Gemini 2.0 Flash (Google GenAI) | Image analysis for news context |
+| **Streaming** | Vercel AI SDK | Real-time response streaming |
+| **Tool calling** | Vercel AI SDK | Structured output and function execution |
 
 <Warning>
   AI predictions are not financial advice. The multi-agent system improves signal quality but cannot predict the future. Markets are adversarial — always understand the reasoning chain before acting on a signal.

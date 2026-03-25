@@ -14,7 +14,7 @@ Supermission is fully responsive. Not "mobile-friendly" in the way that means "w
     Market cards stack vertically in a single column. No cramped 2-column grids. Each card is full-width and tappable.
   </Card>
   <Card title="Bottom Navigation" icon="bars">
-    Main sections — Markets, Portfolio, Watchlist, Agents — are accessible from a bottom nav bar. Thumb-friendly. Always visible.
+    Main sections — Markets, DeFAI, Security, Dashboard, Blog — are accessible from a bottom nav bar. Thumb-friendly. Always visible.
   </Card>
   <Card title="Sidebar Toggle" icon="sidebar">
     Chat history and agent conversations collapse into a toggleable sidebar. Swipe or tap to open. Full screen for the conversation when open.
@@ -42,12 +42,12 @@ Everything. Specifically:
 
 ## Performance
 
-The app is optimized for speed. Market data streams in real-time. Pages load fast, even on spotty connections.
+The app is built on Next.js with optimized bundles. Market data streams via Server-Sent Events (SSE) for real-time price updates without polling. Pages load fast, even on spotty connections.
 
 <Tip>
   Add Supermission to your home screen for an app-like experience. On iOS: Safari share button, "Add to Home Screen." On Android: Chrome menu, "Install app." You get full-screen mode without the browser chrome.
 </Tip>
 
 <Warning>
-  Price alerts require the app to be in the foreground or installed to your home screen. Background notifications aren't supported yet — if you need to catch a move, keep the tab open.
+  Price alerts require the app to be in the foreground or installed as a PWA. Background notifications aren't supported yet — if you need to catch a move, keep the tab open.
 </Warning>

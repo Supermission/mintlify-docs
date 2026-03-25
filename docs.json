@@ -4,22 +4,42 @@
   "name": "Supermission",
   "favicon": "/favicon.png",
   "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png",
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
     "href": "https://supermission.fun"
   },
   "colors": {
-    "primary": "#6366f1",
-    "light": "#818cf8",
-    "dark": "#4f46e5"
+    "primary": "#2563EB",
+    "light": "#60A5FA",
+    "dark": "#1D4ED8"
   },
   "navigation": {
     "global": {
       "anchors": [
         {
+          "anchor": "Twitter",
+          "href": "https://x.com/missiondotfun",
+          "icon": "x-twitter"
+        },
+        {
+          "anchor": "Discord",
+          "href": "https://discord.gg/6bwN64PW5f",
+          "icon": "discord"
+        },
+        {
           "anchor": "Telegram",
           "href": "https://t.me/supermissionx",
           "icon": "paper-plane"
+        },
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/Supermission",
+          "icon": "github"
+        },
+        {
+          "anchor": "LinkedIn",
+          "href": "https://www.linkedin.com/company/supermission",
+          "icon": "linkedin"
         }
       ]
     },
@@ -28,7 +48,7 @@
         "tab": "Documentation",
         "groups": [
           {
-            "group": "Get started",
+            "group": "Get Started",
             "pages": [
               "index",
               "getting-started/what-is-supermission",
@@ -202,10 +222,65 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/supaboramern",
-      "linkedin": "https://linkedin.com/company/supermission",
-      "telegram": "https://t.me/supermissionx"
-    }
+      "x": "https://x.com/missiondotfun",
+      "linkedin": "https://www.linkedin.com/company/supermission",
+      "telegram": "https://t.me/supermissionx",
+      "discord": "https://discord.gg/6bwN64PW5f",
+      "github": "https://github.com/Supermission"
+    },
+    "links": [
+      {
+        "header": "Explore",
+        "items": [
+          {
+            "label": "Browse Markets",
+            "href": "https://supermission.fun/markets"
+          },
+          {
+            "label": "Start a Mission",
+            "href": "https://supermission.fun/chat"
+          },
+          {
+            "label": "Documentation",
+            "href": "https://docs.supermission.fun"
+          }
+        ]
+      },
+      {
+        "header": "About",
+        "items": [
+          {
+            "label": "About Us",
+            "href": "https://supermission.fun"
+          },
+          {
+            "label": "How It Works",
+            "href": "https://supermission.fun/how-it-works"
+          },
+          {
+            "label": "Blog",
+            "href": "https://supermission.fun/blog"
+          }
+        ]
+      },
+      {
+        "header": "Legal",
+        "items": [
+          {
+            "label": "Privacy Policy",
+            "href": "https://supermission.fun/privacy"
+          },
+          {
+            "label": "Terms & Conditions",
+            "href": "https://supermission.fun/terms"
+          },
+          {
+            "label": "FAQ",
+            "href": "https://supermission.fun/faq"
+          }
+        ]
+      }
+    ]
   },
   "feedback": {
     "thumbsRating": true,

@@ -290,5 +290,7 @@
   "search": {
     "prompt": "Search docs..."
   },
-  "maths": false
+  "styling": {
+    "latex": false
+  }
 }
